@@ -70,7 +70,7 @@ nous écrirons directement les algorithmes dans le langage de programmation
 Python. Le diagramme suivant montre la notation pour les diagrammes d'activité
 les plus basiques.
 
-![Notation de base](https://cdn-0.plantuml.com/plantuml/png/NOx1pS8m38NlcU8DK5NwB_-XN7fY0IQm6fT6E4wLE1pOY3bOZ0WGHVN9-lG-Fu_5A5kDuiebw4gP8ZpFLCMEIUqKReo_V_TAEKt6oE6y61pQQEBgMnp-SM-gELRVeB4RIeeCcYmaFVnuJVjGb11NOGoGa1bL6LSIhhd3J6-2YMIgqg7l-_tfP0ldRq6njEvQjkVce9izjgr6UG80)
+![Notation de base](../images/notation_base.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -116,7 +116,7 @@ fonction en tant que paramètres, ou renvoyées par une fonction.
 
 #### Diagramme
 
-![Diagramme : aire d'un rectangle](https://cdn-0.plantuml.com/plantuml/png/SoWkIImgAStDuIhEpimhI2nAp5L8IKrBBCqfSSlFAmdEh4fLC3JZ0glYiahDAobABLB8IInAJoqjieOBP2IMba044ZEBKXLiOIeKj92bqj8oapE0ga5gh856vXTmEQJcfG0j1m00)
+![Diagramme : aire d'un rectangle](../images/aire_rectangle.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -216,7 +216,7 @@ Voici 2 versions faisant la même chose.
 
 #### Diagrammes
 
-![Diagram: area of a rectangle](https://cdn-0.plantuml.com/plantuml/png/VS_13e8m30RW-vwYuKBYpOi7Y0c9qHVm2HfMOB4CKjeBJoypY7ZGPAVj-zU_rQGeQZsxwH7YY88zU6hGM6z3r7kO2OudzrAkmAO9TKS2sGMvDbueS8v127nk4OHgnTWoPUKUNwCApS2u76d91BnzB1H9KpBo1Z_Y7Ph-ZQyWnLEfypRmi3tjVrwxqwHVXTDbkUmyZAwYwAtd9m00)
+![Diagram: area of a rectangle](../images/aire_rectangle2.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -239,7 +239,7 @@ stop
 
 </details>
 
-![Diagram: area of a rectangle](https://cdn-0.plantuml.com/plantuml/png/TP2n3e9038RtUug61JKkBWuG4XAZB-0JD5o1Y-KWlTx2qyiHKHUcDld_h_dIEYYAne5DU3a_eU00bbgCh8_HwzFD19UhMLkcmBPrJKzoo6x8JUIb2foZ4mARHmz2ZQBlcB9ZQGf6wIWAL41U9L7tD6TWX2spyGT1iM8zHjt3KhQ3hHRLz_1fwvR_sXzP2fgT8QqB6NISJ4tUBbzu0m00)
+![Diagram: area of a rectangle](../images/aire_rectangle3.png)
 
 <details>
 <summary>Code PlantUML</summary>

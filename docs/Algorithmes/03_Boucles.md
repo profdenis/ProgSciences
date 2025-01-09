@@ -19,7 +19,7 @@ la boucle continue si la condition est fausse.
 Donc le retour arrière vers le début de la boucle s'effectue quand la
 condition est fausse. Quand la condition est vraie, on sort de la boucle.
 
-![répéter ... jusqu'à](https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5qCs-HcXs3BkHZ3USYXs_zRosUYvXOerzwZy0)
+![répéter ... jusqu'à](../images/repeat.png)
 
 <details>
 <summary>PlantUML code</summary>
@@ -58,7 +58,7 @@ la boucle continue si la condition est vraie.
 Donc le retour arrière vers le début de la boucle s'effectue quand la
 condition est vraie. Quand la condition est fausse, on sort de la boucle.
 
-![faire ... tant que](https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5i1l92CsEeKj-ZJUSYXs_zRosUYvXOerzwZy0)
+![faire ... tant que](../images/faire_tant_que.png)
 
 <details>
 <summary>PlantUML code</summary>
@@ -103,7 +103,7 @@ qu'à la fin du corps de la boucle, on retournera automatiquement au début
 pour évaluer la condition à nouveau et alors, on décidera si on continue
 ou non. Sinon, on doit sauter à la première instruction après la boucle.
 
-![tant que](https://cdn-0.plantuml.com/plantuml/png/TOyn3i8m34NtdE9lj2CB0mnquWASm3IkQf4c9N4AuZICS8vUZ0WnT01BtloUdfka53KFpgIp-94Y3R3SKNPw25wFScUiD-PpPROTIMHSChkoQFkG63IHLpZ2AUJMySvSUt6CgWtUYahmsDUGX6gA9BL1cP-U-G6t4g_pAmhd2CjBANlxzPQsM_qdPOppCosnf64qJO7BXsy0)
+![tant que](../images/tant_que.png)
 
 <details>
 <summary>PlantUML code</summary>
@@ -154,7 +154,7 @@ aussi utiliser les boucles `tant que`, mais on utilisera normalement les
 boucles `pour` lorsque possible. Les boucles `pour` sont, dans la plupart
 des langages, une forme compacte des boucles `tant que` avec compteurs.
 
-![Boucles avec compteur 1](https://cdn-0.plantuml.com/plantuml/png/TOz1JWCn34NtESNVqH6hBc3HKj4L1u0Jf3EkQf7O8N50uZGicNFaOgG8LIC4NueKMz_Vp_jYFbkDmPLdbkIpZvZew6km1nLxudV2-jPzkzpcw3aJNYg5_Z2Uj13ygnT3y3Xe7GDjtMRKc8ngnWxhNihXiSsfpSR6AgLtRxRkxSI1iBfOxtRuxRiVm0KhhJmuTFsvlNqWNB5OcpEVSoPQeg1hYNFvNf_9IAOV354P_hakvVPPbfd5DBbzdwqnV040)
+![Boucles avec compteur 1](../images/for.png)
 
 <details>
 <summary>PlantUML code</summary>
@@ -185,7 +185,7 @@ avec `count = 0` au lieu de commencer avec 1. Pour faire le même nombre
 d'itérations à travers la boucle, nous devons changer la condition de la boucle
 pour utiliser `<` au lieu de `<=`.
 
-![Boucles avec compteur 2](https://cdn-0.plantuml.com/plantuml/png/TL0xJiH03Erz2dTij0qKK6n0RCK1u0JUnAkrcDZ3Z0SaJaD9pZ4NOuW0HGWikR3rFdxUPwVaPGgG7qKZ9Pfmv2ELu7Uc_Y2lZ1TNiA1WToH9Z4-5GsiSJfOPwPdKCH0Uh0o1UzWDDaNdal06pzkeX_iwnpgxk9ZcjhtiuUKaWN7p0xt6tx3R3YNZnefqWAt-DAzl6Cv4lSv9FcL6Nb-oqBujjjiUMCSlOpNj_iaJKttFAvaMtYBi6xUzwGC0)
+![Boucles avec compteur 2](../images/for2.png)
 
 <details>
 <summary>PlantUML code</summary>

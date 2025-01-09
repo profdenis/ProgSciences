@@ -27,7 +27,7 @@ simple. Des exemples plus complexes suivront.
 
 #### Version 1 : condition à l'extérieur du losange
 
-![Diagramme: le plus petit de 2 nombres](https://cdn-0.plantuml.com/plantuml/png/VP11JWCn34NtEOMNCr8tR5YqI7J51JY1cVbfBHAdYXs4E17tu6ACKY1Yqx_qj__xyj6SgxUSWhsANhXofXMHM_Adelui7w2x-z2tmXxg5PKk5LbG3t-35UrTlZup3Y6cmYvw8YqEgd8wUw1D2PIAiPv0CAUcXFnIMPSpClIwCvMs6Q2bw2ekHHKfOGxGzHeN9D8qav-XDFsqe8U1fyUv1-qvHjcIHzK-xXa9iTEwJ2Znu15iU6-L1JkAB1MqO97k_7O9I0QQJBJeJF-fez3WZbTqzRlTJNxaPdQhm7OKWtcvX2DqRJbz0m00)
+![Diagramme: le plus petit de 2 nombres](../images/plus_petit_2_nombres.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -66,7 +66,7 @@ stop
 Le losange est "étiré" horizontalement pour faire de la place à la condition,
 donc le losange n'est désormais plus un losange, il devient un hexagone.
 
-![Diagramme: le plus petit de 2 nombres](https://cdn-0.plantuml.com/plantuml/png/NP0nJWGn34NxdE9tp9Oq5Bj8RCK5E46O_CnO9FOeSIJ4YU0SUp74W615Qpq_FVlSFJOVjOJ-8hh55YiISnp57qtzITw8sxkmK-58zSQ6hR4As-bta3XUvV9UUGgvM7JH1MfED5bM3m1WYet3SVbOOc6bEYhT6r4YPjCaBgROsHIren1g70dfXlMvHPtNVIrGqxSyICRqquBxlmWy7E0h5PCDEUp6OynPvlMwdQKJavh-8wwFeIR9eRjjuKnDNs_w1000)
+![Diagramme: le plus petit de 2 nombres](../images/plus_petit_2_nombres2.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -132,7 +132,7 @@ nombre.
 
 ### Diagramme
 
-![Diagramme: le plus petit de 2 nombres version 2](https://cdn-0.plantuml.com/plantuml/png/VOynJWGn34NxdE9hgzcIXc87YQcew3X1O7uq5eaJEOw4E17tu6AC430Dsixoz_FNMxf7yr5owA-YBLeiM9dYoFvGrP_adRYv3TzNuK9rew4PYz3clyNAyIQV7uLpa8Jf9yVT4ToVuHiLKnro3W1mYId9oqR3wP7uHRIMPoFO7PbeUNGqklXf3ioTcBJgF_nHTFM3hf9sbzh2ii-xzHS0)
+![Diagramme: le plus petit de 2 nombres version 2](../images/plus_petit_2_nombres3.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -174,7 +174,7 @@ distinguer les 3 cas.
 
 ### Diagramme
 
-![Diagramme: le plus petit de 2 nombres version 3](https://cdn-0.plantuml.com/plantuml/png/VOqnJWCn44Lxd-8hrQQaeSWYI4L5nmaCEoOZxB7b6KiH9u9pv69Okmaf5fZ2icQUtjkh-MejHQVlBCLNdp1Hy2tQOnPxvW_2pQsRARSZiKeLfL9YgkFFOg9svDDdej5nmB257KWmd3dSNG4yR1twx7m8_7henyqJuG9AJY-LG6g8VHkRef2nRKP7KGaOb2NBelYjTBykhMjNv9yU-ipD9Vc7IsVPsQFGB8RJrvjlnuj29WvkUTLoSVl-Rob-0m00)
+![Diagramme: le plus petit de 2 nombres version 3](../images/plus_petit_2_nombres4.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -215,7 +215,7 @@ besoin d'une autre conditionnelle pour distinguer ces 2 cas.
 Ce diagramme représente exactement le même algorithme, mais les noeuds sont
 agencés différemment.
 
-![Mise en page alternative du diagram](https://cdn-0.plantuml.com/plantuml/png/bOsnIaD144Nx_OfhghpInY9FD9KWs0dsQzviChWxkypCGl2Bz3loOyP7D88Ws0ttphbdRHxLUyd1NbXQr5WmKOez-rqLV-HNmkLLk6WQjoMY6psHEczYla-e4bOahgHeIeL9n-zWehxdmrkXCN32yjJZ-bpWTe3lIB2idOS00AkO4czsf5Wy4BuOgULP2MIEV4npDpHoziKObb9b06KZ_BJS_CDo_lp3CnjcsUy5coTEjC6gE0xlszZtdw1Cd89vRM5zl7l97m00)
+![Mise en page alternative du diagram](../images/plus_petit_2_nombres5.png)
 
 <details>
 <summary>Code PlantUML</summary>
@@ -300,7 +300,7 @@ légèrement différente.
 
 #### Diagramme
 
-![Le plus petit de 2 nombres avec un `switch`](https://cdn-0.plantuml.com/plantuml/png/XT0zJiGm40NWVaxnjDLkIKEn0JOL5HqdCCc4MDYEvHcBY1F1EN8nhFmG2P1sEiyyVyMhHKtIx1t9cmtH9EFHScUoqySXwBFzODpSqfoYCmTDd10JUykf-bcqd4SxVNgkIDwjDZsEbnEeCS8uhcdSxJ5SJeGoPzDrjkdByV346uim-9V4O56uidLP45cj7gfLn39R_k4N_4VUxzVj3RtVF_r7odnUEO6KhZ1zlPey5eb3kzH0eaEakhnBmzy0)
+![Le plus petit de 2 nombres avec un `switch`](../images/plus_petit_2_nombres6.png)
 
 <details>
 <summary>Code PlantUML</summary>
