@@ -1,8 +1,8 @@
 # Introduction aux algorithmes
 
-## Algorithmes: Définitions
+## Algorithmes : Définitions
 
-Commençons par quelques définitions du mot *algorithme*:
+Commençons par quelques définitions du mot *algorithme* :
 
 - [Cambridge Dictionary](https://dictionary.cambridge.org/dictionary/english/algorithm)
     - une liste d'instructions pour résoudre un problème
@@ -177,7 +177,7 @@ pseudocode, mais même avec de l'expérience, lorsque nous rencontrons des
 problèmes plus complexes, les diagrammes aident souvent. De nombreux types de
 diagrammes seront utilisés lors de la conception et du développement de systèmes
 logiciels, tels que les diagrammes de *séquences*, de *cas d'utilisation*,
-d'*états*, de *classes*, ...
+d'*états*, de *classes*...
 
 Les entrées et les sorties sont elles-mêmes des tâches complexes, et dépendront
 exactement de la façon dont nous voulons entrer et sortir (afficher) les

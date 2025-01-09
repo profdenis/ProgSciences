@@ -4,13 +4,12 @@
 
 Les algorithmes qui ne font que prendre des entrées, calculer des valeurs
 à l'aide de formules et produire des résultats, ne sont pas
-très intéressants, ou du moins ils deviendront rapidement redondants. Nous avons
-besoin d'autres concepts de programmation pour permettre de supporter des
-algorithmes
-différents et plus complexes.
+très intéressants, ou du moins, ils deviendront rapidement redondants. Nous 
+avons besoin d'autres concepts de programmation pour permettre de supporter des
+algorithmes différents et plus complexes.
 
 Un concept utile est la **conditionnelle**, utilisée pour faire des choix
-pendant l'exécution d'un algorithme. On l'appelle parfois une branche car
+pendant l'exécution d'un algorithme. On l'appelle parfois une branche, car
 lorsque nous exécutons un algorithme, nous pouvons nous diriger vers l'une des
 nombreuses branches en fonction de certaines conditions. Pour commencer, nous
 examinerons des exemples avec seulement 2 cas possibles, avec une condition qui
@@ -26,7 +25,7 @@ simple. Des exemples plus complexes suivront.
 
 ### Diagrammes
 
-#### Version 1: condition à l'extérieur du losange
+#### Version 1 : condition à l'extérieur du losange
 
 ![Diagramme: le plus petit de 2 nombres](https://cdn-0.plantuml.com/plantuml/png/VP11JWCn34NtEOMNCr8tR5YqI7J51JY1cVbfBHAdYXs4E17tu6ACKY1Yqx_qj__xyj6SgxUSWhsANhXofXMHM_Adelui7w2x-z2tmXxg5PKk5LbG3t-35UrTlZup3Y6cmYvw8YqEgd8wUw1D2PIAiPv0CAUcXFnIMPSpClIwCvMs6Q2bw2ekHHKfOGxGzHeN9D8qav-XDFsqe8U1fyUv1-qvHjcIHzK-xXa9iTEwJ2Znu15iU6-L1JkAB1MqO97k_7O9I0QQJBJeJF-fez3WZbTqzRlTJNxaPdQhm7OKWtcvX2DqRJbz0m00)
 
@@ -62,7 +61,7 @@ stop
 
 </details>
 
-#### Version 2: condition à l'intérieur du losange
+#### Version 2 : condition à l'intérieur du losange
 
 Le losange est "étiré" horizontalement pour faire de la place à la condition,
 donc le losange n'est désormais plus un losange, il devient un hexagone.
@@ -204,7 +203,7 @@ stop
 ### Discussion
 
 Lorsque nous avons 3 cas (ou branches) ou plus, une seule conditionnelle ne
-suffira pas car elle ne distingue que 2 cas, la partie _vraie_ et la partie
+suffira pas, car elle ne distingue que 2 cas, la partie _vraie_ et la partie
 _fausse_ de la condition. Nous déterminons d'abord si le premier nombre est plus
 petit que le second, puis si oui, nous procédons comme avant. Si le premier
 nombre n'est pas plus petit que le second, alors nous avons 2 autres cas : le

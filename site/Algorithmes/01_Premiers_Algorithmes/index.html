@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Introduction aux algorithmes - Cours de programmation en sciences</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction aux algorithmes";
+        var mkdocs_page_input_path = "Algorithmes/01_Premiers_Algorithmes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Cours de programmation en sciences
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Cours de programmation en sciences</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Algorithmes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Introduction aux algorithmes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#algorithmes-definitions">Algorithmes : Définitions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notation-sous-forme-de-diagrammes">Notation sous forme de diagrammes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exemples">Exemples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#calcul-de-laire-dun-rectangle">Calcul de l&rsquo;aire d&rsquo;un rectangle</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#diagramme">Diagramme</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pseudocode">Pseudocode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#discussion">Discussion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#meilleures-entrees-et-sorties">Meilleures entrées et sorties</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#diagrammes">Diagrammes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#discussion_1">Discussion</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pseudocode_1">Pseudocode</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_Conditionnelles/">Les conditionnelles</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_Boucles/">Les boucles</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Cours de programmation en sciences</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Algorithmes</li>
+      <li class="breadcrumb-item active">Introduction aux algorithmes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/profdenis/ProgSciences/edit/master/docs/Algorithmes/01_Premiers_Algorithmes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="introduction-aux-algorithmes">Introduction aux algorithmes<a class="headerlink" href="#introduction-aux-algorithmes" title="Permanent link">&para;</a></h1>
+<h2 id="algorithmes-definitions">Algorithmes : Définitions<a class="headerlink" href="#algorithmes-definitions" title="Permanent link">&para;</a></h2>
+<p>Commençons par quelques définitions du mot <em>algorithme</em> :</p>
+<ul>
+<li><a href="https://dictionary.cambridge.org/dictionary/english/algorithm">Cambridge Dictionary</a><ul>
+<li>une liste d&rsquo;instructions pour résoudre un problème</li>
+<li>un ensemble d&rsquo;instructions ou de règles mathématiques qui, habituellement
+  données à un ordinateur, aideront à calculer une réponse à un
+  problème</li>
+</ul>
+</li>
+<li><a href="https://www.merriam-webster.com/dictionary/algorithm">Merriam-Webster</a><ul>
+<li>une procédure pour résoudre un problème mathématique (comme celui de
+  trouver le plus grand diviseur commun) en un nombre fini d&rsquo;étapes qui
+  implique souvent la répétition d&rsquo;une opération</li>
+<li><em>plus généralement</em> : une procédure étape par étape pour résoudre un
+  problème ou accomplir une certaine fin</li>
+</ul>
+</li>
+<li><a href="https://www.geeksforgeeks.org/introduction-to-algorithms/">Geeks for Geeks</a><ul>
+<li>Un ensemble fini de règles ou d&rsquo;instructions à suivre dans les calculs
+  ou d&rsquo;autres opérations pour résoudre des problèmes</li>
+<li>Une procédure pour résoudre un problème mathématique en un nombre fini
+  d&rsquo;étapes qui implique souvent des opérations récursives</li>
+</ul>
+</li>
+<li>Autres définitions possibles :<ol type="1">
+<li>Un algorithme est une procédure bien définie qui permet à un ordinateur
+   de résoudre un problème. Une autre façon de décrire un algorithme est de
+   dire qu&rsquo;il s&rsquo;agit d&rsquo;une approche étape par étape pour résoudre un
+   problème ou accomplir une tâche.</li>
+<li>En informatique et en mathématiques, un algorithme est une séquence
+   d&rsquo;instructions dont le principal objectif est de résoudre un problème
+   spécifique, d&rsquo;effectuer une certaine action ou de calculer. Dans certains
+   cas, les algorithmes sont utilisés pour le traitement des données et les
+   tâches de raisonnement automatisé.</li>
+<li>Un algorithme est un ensemble spécifique d&rsquo;instructions conçues pour
+   effectuer une tâche particulière. Cela peut être un processus simple,
+   comme la multiplication de deux nombres, ou une opération complexe, comme
+   la lecture d&rsquo;un fichier vidéo compressé. Les moteurs de recherche
+   utilisent des algorithmes complexes pour trier les pages Web pertinentes
+   parmi des millions de résultats.</li>
+<li>Un algorithme en informatique est une procédure bien définie qui prend
+   certaines valeurs en entrée et les traite pour produire une certaine
+   valeur en sortie. Les algorithmes sont essentiels pour l&rsquo;exécution de
+   procédures étape par étape pour les calculs et le traitement des données.</li>
+<li>Un algorithme est une séquence de comportement étape par étape qui
+   définit un ensemble de calculs. Ils sont utilisés pour le calcul, le
+   traitement des données, le raisonnement automatisé et d&rsquo;autres tâches.</li>
+</ol>
+</li>
+</ul>
+<p>Veuillez noter qu&rsquo;un algorithme doit être clair et sans ambiguïté, il doit avoir
+des entrées et des sorties bien définies, et il doit être fini.</p>
+<p>Lors de la conception d&rsquo;un algorithme, il y aura généralement des entrées
+données à l&rsquo;algorithme. Ensuite, après avoir effectué des calculs en utilisant
+ces entrées, les résultats seront émis ou renvoyés à un utilisateur, ou à un
+autre algorithme qui utilisera ces résultats pour effectuer ses propres calculs
+à être sortis ou renvoyés. En d&rsquo;autres termes, les algorithmes pourraient être
+chaînés les uns à la suite des autres.</p>
+<h2 id="notation-sous-forme-de-diagrammes">Notation sous forme de diagrammes<a class="headerlink" href="#notation-sous-forme-de-diagrammes" title="Permanent link">&para;</a></h2>
+<p>Pour représenter les algorithmes graphiquement, nous allons utiliser <em>diagrammes
+d&rsquo;états UML</em>, en utilisant la notation disponible dans le
+logiciel <a href="https://plantuml.com/state-diagram">PlantUML</a>.</p>
+<p>Pour représenter les algorithmes de manière graphique, nous utiliserons les
+<strong>Diagrammes d&rsquo;Activité</strong>, et nous utiliserons
+<a href="https://plantuml.com/state-diagram">PlantUML</a>
+pour les dessiner. Nous représenterons également les algorithmes en pseudocode,
+dans une notation similaire à celle du langage de programmation Python. Plus
+tard, après avoir discuté des types de données et de certains autres sujets,
+nous écrirons directement les algorithmes dans le langage de programmation
+Python. Le diagramme suivant montre la notation pour les diagrammes d&rsquo;activité
+les plus basiques.</p>
+<p><img alt="Notation de base" src="https://cdn-0.plantuml.com/plantuml/png/NOx1pS8m38NlcU8DK5NwB_-XN7fY0IQm6fT6E4wLE1pOY3bOZ0WGHVN9-lG-Fu_5A5kDuiebw4gP8ZpFLCMEIUqKReo_V_TAEKt6oE6y61pQQEBgMnp-SM-gELRVeB4RIeeCcYmaFVnuJVjGb11NOGoGa1bL6LSIhhd3J6-2YMIgqg7l-_tfP0ldRq6njEvQjkVce9izjgr6UG80" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+note right 
+    noeud de départ
+end note
+:some action;
+note right
+   action simple : lire une valeur, faire un calcul, ...
+end note
+:some other action;
+stop
+note right
+    noeud de fin
+end note
+@enduml
+</code></pre></div>
+
+</details>
+
+<h2 id="exemples">Exemples<a class="headerlink" href="#exemples" title="Permanent link">&para;</a></h2>
+<h3 id="calcul-de-laire-dun-rectangle">Calcul de l&rsquo;aire d&rsquo;un rectangle<a class="headerlink" href="#calcul-de-laire-dun-rectangle" title="Permanent link">&para;</a></h3>
+<p>Commençons par un exemple simple : comment calculons-nous l&rsquo;aire d&rsquo;un
+rectangle ? Nous avons besoin de 2 valeurs pour calculer l&rsquo;aire d&rsquo;un rectangle :
+sa <code>largeur</code> et sa <code>hauteur</code>. Nous supposons pour l&rsquo;instant que ces 2 valeurs
+seront entrées dans le programme par un utilisateur, à l&rsquo;aide d&rsquo;un dispositif
+d&rsquo;entrée (probablement un clavier), et que les résultats seront affichés à
+l&rsquo;utilisateur à l&rsquo;aide d&rsquo;un dispositif de sortie (probablement un écran). Nous
+verrons plus tard que les entrées et les sorties peuvent ne pas être prises ou
+données directement par/aux utilisateurs, mais pourraient plutôt être données à
+une
+fonction en tant que paramètres, ou renvoyées par une fonction.</p>
+<ul>
+<li><em>Entrées</em> : la <code>largeur</code> et la <code>hauteur</code> du rectangle</li>
+<li><em>Sortie</em> : l&rsquo;<code>aire</code> du rectangle</li>
+</ul>
+<h4 id="diagramme">Diagramme<a class="headerlink" href="#diagramme" title="Permanent link">&para;</a></h4>
+<p><img alt="Diagramme : aire d'un rectangle" src="https://cdn-0.plantuml.com/plantuml/png/SoWkIImgAStDuIhEpimhI2nAp5L8IKrBBCqfSSlFAmdEh4fLC3JZ0glYiahDAobABLB8IInAJoqjieOBP2IMba044ZEBKXLiOIeKj92bqj8oapE0ga5gh856vXTmEQJcfG0j1m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer largeur;
+:entrer hauteur;
+:aire = largeur * hauteur;
+:afficher aire;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h4 id="pseudocode">Pseudocode<a class="headerlink" href="#pseudocode" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>largeur = entrer()
+hauteur = entrer()
+aire = largeur * hauteur
+afficher(aire)
+</code></pre></div>
+<h4 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h4>
+<p>Certaines actions concernent le calcul de certaines valeurs basées sur d&rsquo;autres
+valeurs, comme <code>aire = largeur * hauteur</code>. Notez que nous utilisons <code>*</code> comme
+symbole de multiplication. Dans ce cas, le calcul <code>largeur * hauteur</code> est écrit
+à droite du signe égal (<code>=</code>), et le résultat est conservé dans <code>aire</code>, qui sera
+affiché dans l&rsquo;étape suivante.</p>
+<p>Dans cet exemple, il y a <strong>3 variables</strong> : <code>largeur</code>, <code>hauteur</code> et <code>aire</code>. Ces
+variables sont utilisées pour représenter ou retenir certaines valeurs qui
+seront entrées ou calculées, et qui seront réutilisées plus tard dans les
+calculs ou envoyées en sortie.</p>
+<p>Les diagrammes d&rsquo;activité sont <em>de haut niveau</em>, ce qui signifie qu&rsquo;ils sont
+souvent un peu simplifiés, ils n&rsquo;entrent pas dans chaque petit détail. Nous ne
+nous embêtons pas à définir chaque variable formellement, donc lorsque nous
+écrivons <code>entrer largeur</code>, il est sous-entendu qu&rsquo;une variable nommée <code>largeur</code>
+sera définie, et sa valeur sera ce qui a été entré. De même,
+pour <code>afficher aire</code>,
+nous disons simplement que nous voulons que <code>aire</code> soit affichée en sortie,
+mais nous ne
+nous embêtons pas avec les détails d&rsquo;où et comment <code>aire</code> sera affichée. Nous
+serons un peu plus précis dans le pseudocode, et beaucoup plus précis lorsque
+nous écrirons un programme pour faire les calculs pour de vrai. À ce stade, les
+diagrammes sont utilisés pour avoir une idée de ce qui doit être fait. Ils
+deviendront plus compliqués quand nous rencontrerons des algorithmes plus
+complexes. Avec un peu d&rsquo;expérience, nous serons en mesure d&rsquo;écrire du code
+directement sans créer d&rsquo;abord des diagrammes d&rsquo;activité ou écrire du
+pseudocode, mais même avec de l&rsquo;expérience, lorsque nous rencontrons des
+problèmes plus complexes, les diagrammes aident souvent. De nombreux types de
+diagrammes seront utilisés lors de la conception et du développement de systèmes
+logiciels, tels que les diagrammes de <em>séquences</em>, de <em>cas d&rsquo;utilisation</em>,
+d&rsquo;<em>états</em>, de <em>classes</em>&hellip;</p>
+<p>Les entrées et les sorties sont elles-mêmes des tâches complexes, et dépendront
+exactement de la façon dont nous voulons entrer et sortir (afficher) les
+valeurs.
+Nous
+résumons donc ces tâches et nous disons simplement pour l&rsquo;instant que nous
+entrons et sortons des valeurs d&rsquo;une certaine manière. Dans le pseudocode, nous
+écrivons ces 2 tâches un peu différemment par rapport aux diagrammes : nous
+utilisons la notation de fonction pour être un peu plus précis. La tâche
+d&rsquo;entrer d&rsquo;une valeur produit (ou donne ou retourne) une valeur, et nous
+stockons cette valeur dans une variable, comme dans <code>largeur = entrer()</code>. Nous
+utilisons les parenthèses<code>()</code> pour signifier que nous appelons, ou exécutons, la
+fonction <code>entrer</code>. La valeur produite est stockée dans la
+variable <code>largeur</code>. Nous disons aussi que la valeur renvoyée par la
+fonction <code>entrer</code> est assignée à la variable <code>largeur</code>.</p>
+<p>Pour pouvoir accomplir sa tâche, la fonction <code>afficher</code> a besoin de savoir
+quelle
+valeur afficher, donc nous lui donnons une valeur entre les <code>()</code> lorsque nous
+l&rsquo;appelons. Dans notre exemple, nous lui avons donné la variable <code>aire</code>, alors
+elle affiche la valeur contenue dans la variable <code>aire</code>. <code>afficher</code> ne renvoie
+aucune valeur, c&rsquo;est pourquoi nous ne l&rsquo;assignons à rien.</p>
+<h3 id="meilleures-entrees-et-sorties">Meilleures entrées et sorties<a class="headerlink" href="#meilleures-entrees-et-sorties" title="Permanent link">&para;</a></h3>
+<p>Un problème lors de l&rsquo;entrée d&rsquo;une valeur dans l&rsquo;exemple précédent est que nous
+ne donnons aucune information à l&rsquo;utilisateur sur ce qui doit être entré. Dans
+ce cas, l&rsquo;utilisateur devinera probablement que la largeur et la hauteur doivent
+être entrées pour pouvoir calculer l&rsquo;aire d&rsquo;un rectangle, mais laquelle doit
+être entrée en premier ? Dans ce cas, cela n&rsquo;a pas vraiment d&rsquo;importance, car
+nous obtiendrons les mêmes résultats, mais en général, l&rsquo;inversion de 2 entrées
+peut changer considérablement les résultats. Nous avons donc besoin de donner
+plus d&rsquo;informations à l&rsquo;utilisateur.</p>
+<p>Voici 2 versions faisant la même chose.</p>
+<h4 id="diagrammes">Diagrammes<a class="headerlink" href="#diagrammes" title="Permanent link">&para;</a></h4>
+<p><img alt="Diagram: area of a rectangle" src="https://cdn-0.plantuml.com/plantuml/png/VS_13e8m30RW-vwYuKBYpOi7Y0c9qHVm2HfMOB4CKjeBJoypY7ZGPAVj-zU_rQGeQZsxwH7YY88zU6hGM6z3r7kO2OudzrAkmAO9TKS2sGMvDbueS8v127nk4OHgnTWoPUKUNwCApS2u76d91BnzB1H9KpBo1Z_Y7Ph-ZQyWnLEfypRmi3tjVrwxqwHVXTDbkUmyZAwYwAtd9m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:afficher &quot;Calcul de l&#39;aire d&#39;un rectangle&quot;;
+:afficher &quot;Entrez la largeur du rectangle :&quot;;
+:entrer largeur;
+:afficher &quot;Entrez la hauteur du rectangle :&quot;;
+:entrer hauteur;
+:aire = largeur * hauteur;
+:afficher &quot;l&#39;aire est&quot;;
+:afficher aire;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<p><img alt="Diagram: area of a rectangle" src="https://cdn-0.plantuml.com/plantuml/png/TP2n3e9038RtUug61JKkBWuG4XAZB-0JD5o1Y-KWlTx2qyiHKHUcDld_h_dIEYYAne5DU3a_eU00bbgCh8_HwzFD19UhMLkcmBPrJKzoo6x8JUIb2foZ4mARHmz2ZQBlcB9ZQGf6wIWAL41U9L7tD6TWX2spyGT1iM8zHjt3KhQ3hHRLz_1fwvR_sXzP2fgT8QqB6NISJ4tUBbzu0m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:afficher(&quot;Calcul de l&#39;aire d&#39;un rectangle&quot;);
+:largeur = entrer(&quot;Entrez la largeur du rectangle :&quot;);
+:hauteur = entrer(&quot;Entrez la hauteur du rectangle :&quot;);
+:aire = largeur * hauteur;
+:afficher(&quot;l&#39;aire est&quot;, aire);
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h4 id="discussion_1">Discussion<a class="headerlink" href="#discussion_1" title="Permanent link">&para;</a></h4>
+<p>Le premier de ces deux diagrammes est correct, mais il serait généralement
+considéré comme trop verbeux. Nous laisserons de côté la sortie supplémentaire
+pour nous concentrer sur l&rsquo;algorithme lui-même, ou nous utiliserons la deuxième
+version dans laquelle une nouvelle version de la fonction <code>entrer</code> est utilisée
+directement dans les diagrammes. Cette version de la fonction <code>entrer</code> accepte
+une chaîne de caractères en paramètre, qui sera affichée avant d&rsquo;attendre qu&rsquo;une
+valeur soit entrée. Une chaîne de caractères, pour la distinguer d&rsquo;une ou de
+plusieurs variables, est donnée entre guillemets doubles <code>""</code>.</p>
+<p>La fonction <code>afficher</code> est également utilisée différemment. On lui donne 2 choses
+à afficher, une chaîne et une variable contenant les résultats. Elle les
+affichera l&rsquo;une après l&rsquo;autre.</p>
+<p>Nous aurons besoin de messages de sortie plus complets lors de l&rsquo;écriture du
+code, et nous les inclurons souvent lors de l&rsquo;écriture du pseudocode, mais pas
+lors de la création de diagrammes d&rsquo;activité pour les garder plus petits et nous
+aider à nous concentrer sur l&rsquo;algorithme lui-même, et non sur les détails des
+entrées et des sorties, à moins que l&rsquo;algorithme devait traiter les entrées et
+les sorties d&rsquo;une manière très spécifique.</p>
+<h4 id="pseudocode_1">Pseudocode<a class="headerlink" href="#pseudocode_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>afficher(&quot;Calcul de l&#39;aire d&#39;un rectangle&quot;)
+largeur = entrer(&quot;Entrez la largeur du rectangle :&quot;)
+hauteur = entrer(&quot;Entrez la hauteur du rectangle :&quot;)
+aire = largeur * hauteur
+afficher(&quot;l&#39;aire est&quot;, aire)
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Cours de programmation en sciences"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../02_Conditionnelles/" class="btn btn-neutral float-right" title="Les conditionnelles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/profdenis/ProgSciences" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../02_Conditionnelles/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/config.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 ## Boucles sans compteurs
 
 Les boucles sans compteurs sont basées seulement sur une condition, et ne
-compte pas le nombre de fois que la boucle est répétée. Pas opposition, les
+comptent pas le nombre de fois que la boucle est répétée. Pas opposition, les
 boucles avec compteurs comptent le nombre de répétitions de la boucle, et la
 décision de répéter la boucle ou non est basée sur le nombre de répétitions
 conservé dans le compteur.

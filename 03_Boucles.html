@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03_Boucles</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="les-boucles">Les boucles</h1>
+<h2 id="boucles-sans-compteurs">Boucles sans compteurs</h2>
+<p>Les boucles sans compteurs sont basées seulement sur une condition, et ne comptent pas le nombre de fois que la boucle est répétée. Pas opposition, les boucles avec compteurs comptent le nombre de répétitions de la boucle, et la décision de répéter la boucle ou non est basée sur le nombre de répétitions conservé dans le compteur.</p>
+<h3 id="boucle-répéter-...-jusquà">Boucle <code>répéter ... jusqu'à</code></h3>
+<p>En anglais : <code>repeat ... until</code>.</p>
+<p>On place une conditionnelle à la fin de ce qui doit être répété (à la fin de la boucle). La boucle arrête quand la condition du <code>jusqu'à</code> est vraie, et la boucle continue si la condition est fausse.</p>
+<p>Donc le retour arrière vers le début de la boucle s’effectue quand la condition est fausse. Quand la condition est vraie, on sort de la boucle.</p>
+<figure>
+<img src="https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5qCs-HcXs3BkHZ3USYXs_zRosUYvXOerzwZy0" alt="" /><figcaption>répéter … jusqu’à</figcaption>
+</figure>
+<details>
+<p><summary>PlantUML code</summary></p>
+<pre class="plantuml"><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+repeat
+    :faire quelque chose à l&#39;intérieur de la boucle;
+repeat while (condition ?) is (faux) not (vrai)
+:faire quelque chose après la boucle;
+stop
+@enduml</code></pre>
+</details>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+répéter
+    // faire quelque chose à l&#39;intérieur de la boucle
+jusqu&#39;à condition
+// faire quelque chose après la boucle</code></pre>
+<h3 id="boucle-faire-...-tant-que">Boucle <code>faire ... tant que</code></h3>
+<p>En anglais : <code>do ... while</code>.</p>
+<p>On place une conditionnelle à la fin de ce qui doit être répété (à la fin de la boucle). La boucle arrête quand la condition du <code>while</code> est fausse, et la boucle continue si la condition est vraie.</p>
+<p>Donc le retour arrière vers le début de la boucle s’effectue quand la condition est vraie. Quand la condition est fausse, on sort de la boucle.</p>
+<figure>
+<img src="https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5i1l92CsEeKj-ZJUSYXs_zRosUYvXOerzwZy0" alt="" /><figcaption>faire … tant que</figcaption>
+</figure>
+<details>
+<p><summary>PlantUML code</summary></p>
+<pre class="plantuml"><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+repeat
+    :faire quelque chose à l&#39;intérieur de la boucle;
+repeat while (condition ?) is (vrai) not (faux)
+:faire quelque chose après la boucle;
+stop
+@enduml</code></pre>
+</details>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+faire
+    // faire quelque chose à l&#39;intérieur de la boucle
+tantque condition
+// faire quelque chose après la boucle</code></pre>
+<h3 id="boucle-tant-que">Boucle <code>tant que</code></h3>
+<p>En anglais : <code>while</code>.</p>
+<p>La boucle <code>tant que</code> est différente des 2 autres parce que la condition est placée au début de la boucle, et par conséquent, la condition de boucle est évaluée <em>avant</em> de faire quoi que se soit dans le corps la boucle. Le corps d’une boucle <code>tant que</code> peut ne jamais être exécutée, mais le corps des boucles <code>faire ... tant que</code> et <code>répéter ... jusqu'à</code> sont toujours exécutés au moins une fois.</p>
+<p>Mais comme la boucle <code>faire ... tant que</code>, la boucle continue si la condition est <strong>vraie</strong> et arrête lorsque la condition est <strong>fausse</strong>. La différence est qu’à la fin du corps de la boucle, on retournera automatiquement au début pour évaluer la condition à nouveau et alors, on décidera si on continue ou non. Sinon, on doit sauter à la première instruction après la boucle.</p>
+<figure>
+<img src="https://cdn-0.plantuml.com/plantuml/png/TOyn3i8m34NtdE9lj2CB0mnquWASm3IkQf4c9N4AuZICS8vUZ0WnT01BtloUdfka53KFpgIp-94Y3R3SKNPw25wFScUiD-PpPROTIMHSChkoQFkG63IHLpZ2AUJMySvSUt6CgWtUYahmsDUGX6gA9BL1cP-U-G6t4g_pAmhd2CjBANlxzPQsM_qdPOppCosnf64qJO7BXsy0" alt="" /><figcaption>tant que</figcaption>
+</figure>
+<details>
+<p><summary>PlantUML code</summary></p>
+<pre class="plantuml"><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+while (condition ?) is (vrai)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+endwhile (faux)
+:faire quelque chose après la boucle;
+stop
+@enduml</code></pre>
+</details>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+tantque condition :
+    // faire quelque chose à l&#39;intérieur de la boucle
+fintantque
+// faire quelque chose après la boucle</code></pre>
+<h2 id="boucles-avec-compteurs">Boucles avec compteurs</h2>
+<p>On ajoute une variable, le compteur, qui commence avec la valeur 0 ou 1, et la condition de la boucle est basée sur ce compteur. Le compteur est souvent nommé <code>i</code> ou <code>j</code> ou <code>k</code> …, comme dans la notation mathématique pour les sommations :</p>
+<p><span class="math display">\[\sum_{i=1}^{n}i^2\ \ \ .\]</span></p>
+<p>On utilise souvent aussi les variables avec des noms plus précis, comme par exemple <code>nbEssais</code> (<code>nTries</code>) ou <code>compteur</code> (<code>count</code>).</p>
+<p>Il n’y a pas de notation spéciale pour ce type de boucle dans les diagrammes, mais en pseudocode et dans la plupart des langages de programmation, il y a différentes formes de boucles <code>pour</code> (<code>for</code>).</p>
+<p>Dans les diagrammes, on utilise normalement des boucles <code>tant que</code>, et dans le pseudocode et dans les différents langages de programmation, on peut aussi utiliser les boucles <code>tant que</code>, mais on utilisera normalement les boucles <code>pour</code> lorsque possible. Les boucles <code>pour</code> sont, dans la plupart des langages, une forme compacte des boucles <code>tant que</code> avec compteurs.</p>
+<figure>
+<img src="https://cdn-0.plantuml.com/plantuml/png/TOz1JWCn34NtESNVqH6hBc3HKj4L1u0Jf3EkQf7O8N50uZGicNFaOgG8LIC4NueKMz_Vp_jYFbkDmPLdbkIpZvZew6km1nLxudV2-jPzkzpcw3aJNYg5_Z2Uj13ygnT3y3Xe7GDjtMRKc8ngnWxhNihXiSsfpSR6AgLtRxRkxSI1iBfOxtRuxRiVm0KhhJmuTFsvlNqWNB5OcpEVSoPQeg1hYNFvNf_9IAOV354P_hakvVPPbfd5DBbzdwqnV040" alt="" /><figcaption>Boucles avec compteur 1</figcaption>
+</figure>
+<details>
+<p><summary>PlantUML code</summary></p>
+<pre class="plantuml"><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+:compteur = 1;
+:nbRépétitions = 5;
+while (compteur &lt;= nbRépétitions ?) is (oui)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+    :compteur = compteur + 1;
+endwhile (non)
+:faire quelque chose après la boucle;
+stop
+@enduml</code></pre>
+</details>
+<p>Dans la plupart des langages de programmation, il existe un opérateur spécial pour incrémenter un entier, ce qui signifie qu’il va ajouter 1 à la valeur actuelle d’un nombre entier. Écrire <code>compteur++</code> est équivalent à écrire <code>compteur = compteur + 1</code>. Il est également possible de commencer avec <code>count = 0</code> au lieu de commencer avec 1. Pour faire le même nombre d’itérations à travers la boucle, nous devons changer la condition de la boucle pour utiliser <code>&lt;</code> au lieu de <code>&lt;=</code>.</p>
+<figure>
+<img src="https://cdn-0.plantuml.com/plantuml/png/TL0xJiH03Erz2dTij0qKK6n0RCK1u0JUnAkrcDZ3Z0SaJaD9pZ4NOuW0HGWikR3rFdxUPwVaPGgG7qKZ9Pfmv2ELu7Uc_Y2lZ1TNiA1WToH9Z4-5GsiSJfOPwPdKCH0Uh0o1UzWDDaNdal06pzkeX_iwnpgxk9ZcjhtiuUKaWN7p0xt6tx3R3YNZnefqWAt-DAzl6Cv4lSv9FcL6Nb-oqBujjjiUMCSlOpNj_iaJKttFAvaMtYBi6xUzwGC0" alt="" /><figcaption>Boucles avec compteur 2</figcaption>
+</figure>
+<details>
+<p><summary>PlantUML code</summary></p>
+<pre class="plantuml"><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+:compteur = 0;
+:nbRépétitions = 5;
+while (compteur &lt; nbRépétitions ?) is (oui)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+    :compteur++;
+endwhile (non)
+:faire quelque chose après la boucle;
+stop
+@enduml</code></pre>
+</details>
+<h3 id="pseudocode-avec-boucle-tant-que">Pseudocode avec boucle <code>tant que</code></h3>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+compteur = 1
+nbRépétitions = 5
+tantque compteur &lt;= nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+    compteur = compteur + 1
+fintantque
+// faire quelque chose après la boucle</code></pre>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+compteur = 0
+nbRépétitions = 5
+tantque compteur &lt; nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+    compteur++
+fintantque
+// faire quelque chose après la boucle</code></pre>
+<h3 id="pseudocode-avec-boucle-pour">Pseudocode avec boucle <code>pour</code></h3>
+<h4 id="boucle-pour-de-style-algol">Boucle <code>pour</code> de style <em>Algol</em></h4>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour compteur de 0 à nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle</code></pre>
+<ul>
+<li>La valeur de départ du compteur est 0.</li>
+<li>Il va y avoir une répétition (ou itération) de la boucle pour chaque valeur de 0 jusqu’à <code>nbRépétitions</code>.
+<ul>
+<li>selon le langage de programmation utilisé, l’intervalle de valeurs peut être <em>inclusif</em> ou <em>exclusif</em> par rapport à la limite supérieure :
+<ul>
+<li>si <em>inclusif</em>, alors le nombre d’itérations dans la boucle donnée plus haut sera 6 parce qu’il y aura une itération pour toutes les valeurs entières de 0 à 5 inclusivement
+<ul>
+<li>dans ce cas, il serait probablement préférable d’initialiser le compteur à 1 au lieu de 0.</li>
+</ul></li>
+<li>si <em>exclusif</em>, alors le nombre d’itérations dans la boucle donnée plus haut sera 5 parce que la boucle s’arrêtera lorsque <code>compteur == 5</code>, donc il aura seulement des itérations pour les valeurs de <code>compteur</code> de 0, 1, 2, 3, et 4.</li>
+</ul></li>
+<li>La limite inférieure (la valeur de départ) est toujours inclusive.</li>
+<li><em>Nous utiliserons la convention que l’intervalle est <strong>exclusif</strong></em>, comme dans le langage de programmation <em>Python</em>.</li>
+</ul></li>
+</ul>
+<h4 id="boucle-pour-de-style-c">Boucle <code>pour</code> de style <em>C</em></h4>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour (compteur = 0; compteur &lt; nbRépétitions; compteur++) :
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle</code></pre>
+<ul>
+<li><code>compteur = 0</code> : s’exécute une seule fois, juste avant l’évaluation de la condition de la boucle</li>
+<li><code>compteur &lt; nbRépétitions</code> : la condition s’exécute à répétition (ou pour chaque itération) de la boucle, avant le corps de la boucle
+<ul>
+<li>comme pour une boucle <code>tant que</code>, si la condition est vraie, alors le corps de la boucle est exécutée</li>
+<li>sinon (si la condition est fausse), alors la boucle est terminée et l’exécution continue avec les instructions suivant la boucle</li>
+</ul></li>
+<li><code>nbRépétitions++</code> : mise à jour du compteur, qui s’exécute à la fin du corps de la boucle, juste avant de revenir au début de la boucle pour réévaluer la condition</li>
+</ul>
+<h2 id="boucles-pour-chaque">Boucles <code>pour chaque</code></h2>
+<p>En anglais : <code>for each</code>.</p>
+<p>Les boucles <code>pour chaque</code> sont différentes des autres boucles parce qu’elles nécessitent normalement l’utilisation de collections de valeurs ou d’objets, et d’itérateurs. Les collections, comme les tableaux et les listes, contiennent plusieurs valeurs ou objets, et les itérateurs permettent de parcourir toutes les valeurs ou objets d’une collection sous forme de séquence.</p>
+<p>Les collections, les itérateurs et les boucles <code>pour chaque</code> seront présentés de façon plus détaillée plus tard. Pour l’instant, seulement une idée générale du concept est présentée. Il est difficile de bien représenter les boucles <code>pour chaque</code> dans des diagrammes, donc les exemples seront uniquement sous forme de pseudocode.</p>
+<h3 id="boucle-pour-chaque-avec-intervalle">Boucle <code>pour chaque</code> avec intervalle</h3>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour chaque i dans intervalle(0, nbRépétitions) : 
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle</code></pre>
+<ul>
+<li>La fonction <code>intervalle(0, nbRépétitions)</code> va créer une liste de nombres entiers dans l’intervalle <code>[0, nbRépétitions)</code> :
+<ul>
+<li>les crochets <code>[</code> et <code>]</code> veulent dire <em>inclusif</em></li>
+<li>les parenthèses <code>(</code> et <code>)</code> veulent dire <em>exclusif</em></li>
+<li>donc les nombres dans la liste vont être 0, 1, 2, 3 et 4.</li>
+</ul></li>
+<li>À la première itération, <code>i</code> va être 0</li>
+<li>À la deuxième itération, <code>i</code> va être 1</li>
+<li>À la troisième itération, <code>i</code> va être 2</li>
+<li>À la quatrième itération, <code>i</code> va être 3</li>
+<li>À la cinquième et dernière itération, <code>i</code> va être 4</li>
+</ul>
+<h3 id="boucle-pour-chaque-avec-liste-ou-tableau">Boucle <code>pour chaque</code> avec liste ou tableau</h3>
+<pre class="pseudocode"><code>// faire quelque chose avant la boucle
+nombres = [5, 1, 8, 3]
+pour chaque i dans nombres : 
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle</code></pre>
+<ul>
+<li>À la première itération, <code>i</code> va être 5</li>
+<li>À la deuxième itération, <code>i</code> va être 1</li>
+<li>À la troisième itération, <code>i</code> va être 8</li>
+<li>À la quatrième et dernière itération, <code>i</code> va être 3</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Les boucles - Cours de programmation en sciences</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Les boucles";
+        var mkdocs_page_input_path = "Algorithmes/03_Boucles.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Cours de programmation en sciences
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Cours de programmation en sciences</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Algorithmes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_Premiers_Algorithmes/">Introduction aux algorithmes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02_Conditionnelles/">Les conditionnelles</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Les boucles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#boucles-sans-compteurs">Boucles sans compteurs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#boucle-repeter-jusqua">Boucle répéter ... jusqu'à</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#boucle-faire-tant-que">Boucle faire ... tant que</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#boucle-tant-que">Boucle tant que</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boucles-avec-compteurs">Boucles avec compteurs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pseudocode-avec-boucle-tant-que">Pseudocode avec boucle tant que</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pseudocode-avec-boucle-pour">Pseudocode avec boucle pour</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#boucle-pour-de-style-algol">Boucle pour de style Algol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boucle-pour-de-style-c">Boucle pour de style C</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boucles-pour-chaque">Boucles pour chaque</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#boucle-pour-chaque-avec-intervalle">Boucle pour chaque avec intervalle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#boucle-pour-chaque-avec-liste-ou-tableau">Boucle pour chaque avec liste ou tableau</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Cours de programmation en sciences</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Algorithmes</li>
+      <li class="breadcrumb-item active">Les boucles</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/profdenis/ProgSciences/edit/master/docs/Algorithmes/03_Boucles.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-boucles">Les boucles<a class="headerlink" href="#les-boucles" title="Permanent link">&para;</a></h1>
+<h2 id="boucles-sans-compteurs">Boucles sans compteurs<a class="headerlink" href="#boucles-sans-compteurs" title="Permanent link">&para;</a></h2>
+<p>Les boucles sans compteurs sont basées seulement sur une condition, et ne
+comptent pas le nombre de fois que la boucle est répétée. Pas opposition, les
+boucles avec compteurs comptent le nombre de répétitions de la boucle, et la
+décision de répéter la boucle ou non est basée sur le nombre de répétitions
+conservé dans le compteur.</p>
+<h3 id="boucle-repeter-jusqua">Boucle <code>répéter ... jusqu'à</code><a class="headerlink" href="#boucle-repeter-jusqua" title="Permanent link">&para;</a></h3>
+<p>En anglais : <code>repeat ... until</code>.</p>
+<p>On place une conditionnelle à la fin de ce qui doit être répété (à la fin de
+la boucle). La boucle arrête quand la condition du <code>jusqu'à</code> est vraie, et
+la boucle continue si la condition est fausse.</p>
+<p>Donc le retour arrière vers le début de la boucle s&rsquo;effectue quand la
+condition est fausse. Quand la condition est vraie, on sort de la boucle.</p>
+<p><img alt="répéter ... jusqu'à" src="https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5qCs-HcXs3BkHZ3USYXs_zRosUYvXOerzwZy0" /></p>
+<details>
+<summary>PlantUML code</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+repeat
+    :faire quelque chose à l&#39;intérieur de la boucle;
+repeat while (condition ?) is (faux) not (vrai)
+:faire quelque chose après la boucle;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+répéter
+    // faire quelque chose à l&#39;intérieur de la boucle
+jusqu&#39;à condition
+// faire quelque chose après la boucle
+</code></pre></div>
+<h3 id="boucle-faire-tant-que">Boucle <code>faire ... tant que</code><a class="headerlink" href="#boucle-faire-tant-que" title="Permanent link">&para;</a></h3>
+<p>En anglais : <code>do ... while</code>.</p>
+<p>On place une conditionnelle à la fin de ce qui doit être répété (à la fin de
+la boucle). La boucle arrête quand la condition du <code>while</code> est fausse, et
+la boucle continue si la condition est vraie.</p>
+<p>Donc le retour arrière vers le début de la boucle s&rsquo;effectue quand la
+condition est vraie. Quand la condition est fausse, on sort de la boucle.</p>
+<p><img alt="faire ... tant que" src="https://cdn-0.plantuml.com/plantuml/png/TOynJiGm44Lxd-9t92KD1HIauWASO8WdoWXdRCRZW3WD9PmZ5yFQQgNT7Mcw_xxUdwgJUTjIgE-YXOmsH5we9N_9wg_opRX_2ATKU5n8ZF7HEFN7lERAe9tKaGXlkSs9du9nOVA0VbU1umVfJjIFFnDkXiYND3vNIOnXpXh59IkUHqZ5i1l92CsEeKj-ZJUSYXs_zRosUYvXOerzwZy0" /></p>
+<details>
+<summary>PlantUML code</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+repeat
+    :faire quelque chose à l&#39;intérieur de la boucle;
+repeat while (condition ?) is (vrai) not (faux)
+:faire quelque chose après la boucle;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+faire
+    // faire quelque chose à l&#39;intérieur de la boucle
+tantque condition
+// faire quelque chose après la boucle
+</code></pre></div>
+<h3 id="boucle-tant-que">Boucle <code>tant que</code><a class="headerlink" href="#boucle-tant-que" title="Permanent link">&para;</a></h3>
+<p>En anglais : <code>while</code>.</p>
+<p>La boucle <code>tant que</code> est différente des 2 autres parce que la condition est
+placée au début de la boucle, et par conséquent, la condition de boucle est
+évaluée <em>avant</em> de faire quoi que se soit dans le corps la boucle. Le corps
+d&rsquo;une boucle <code>tant que</code> peut ne jamais être exécutée, mais le corps des
+boucles <code>faire ... tant que</code> et <code>répéter ... jusqu'à</code> sont toujours exécutés au
+moins une fois.</p>
+<p>Mais comme la boucle <code>faire ... tant que</code>, la boucle continue si la condition
+est <strong>vraie</strong> et arrête lorsque la condition est <strong>fausse</strong>. La différence est
+qu&rsquo;à la fin du corps de la boucle, on retournera automatiquement au début
+pour évaluer la condition à nouveau et alors, on décidera si on continue
+ou non. Sinon, on doit sauter à la première instruction après la boucle.</p>
+<p><img alt="tant que" src="https://cdn-0.plantuml.com/plantuml/png/TOyn3i8m34NtdE9lj2CB0mnquWASm3IkQf4c9N4AuZICS8vUZ0WnT01BtloUdfka53KFpgIp-94Y3R3SKNPw25wFScUiD-PpPROTIMHSChkoQFkG63IHLpZ2AUJMySvSUt6CgWtUYahmsDUGX6gA9BL1cP-U-G6t4g_pAmhd2CjBANlxzPQsM_qdPOppCosnf64qJO7BXsy0" /></p>
+<details>
+<summary>PlantUML code</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+while (condition ?) is (vrai)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+endwhile (faux)
+:faire quelque chose après la boucle;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+tantque condition :
+    // faire quelque chose à l&#39;intérieur de la boucle
+fintantque
+// faire quelque chose après la boucle
+</code></pre></div>
+<h2 id="boucles-avec-compteurs">Boucles avec compteurs<a class="headerlink" href="#boucles-avec-compteurs" title="Permanent link">&para;</a></h2>
+<p>On ajoute une variable, le compteur, qui commence avec la valeur 0 ou 1, et
+la condition de la boucle est basée sur ce compteur. Le compteur est souvent
+nommé <code>i</code> ou <code>j</code> ou <code>k</code> &hellip;, comme dans la notation mathématique pour les
+sommations :</p>
+<div class="arithmatex">\[\sum_{i=1}^{n}i^2\ \ \ .\]</div>
+<p>On utilise souvent aussi les variables
+avec des noms plus précis, comme par exemple <code>nbEssais</code> (<code>nTries</code>) ou
+<code>compteur</code> (<code>count</code>).</p>
+<p>Il n&rsquo;y a pas de notation spéciale pour ce type de boucle dans les diagrammes,
+mais en pseudocode et dans la plupart des langages de programmation, il y a
+différentes formes de boucles <code>pour</code> (<code>for</code>).</p>
+<p>Dans les diagrammes, on utilise normalement des boucles <code>tant que</code>, et dans
+le pseudocode et dans les différents langages de programmation, on peut
+aussi utiliser les boucles <code>tant que</code>, mais on utilisera normalement les
+boucles <code>pour</code> lorsque possible. Les boucles <code>pour</code> sont, dans la plupart
+des langages, une forme compacte des boucles <code>tant que</code> avec compteurs.</p>
+<p><img alt="Boucles avec compteur 1" src="https://cdn-0.plantuml.com/plantuml/png/TOz1JWCn34NtESNVqH6hBc3HKj4L1u0Jf3EkQf7O8N50uZGicNFaOgG8LIC4NueKMz_Vp_jYFbkDmPLdbkIpZvZew6km1nLxudV2-jPzkzpcw3aJNYg5_Z2Uj13ygnT3y3Xe7GDjtMRKc8ngnWxhNihXiSsfpSR6AgLtRxRkxSI1iBfOxtRuxRiVm0KhhJmuTFsvlNqWNB5OcpEVSoPQeg1hYNFvNf_9IAOV354P_hakvVPPbfd5DBbzdwqnV040" /></p>
+<details>
+<summary>PlantUML code</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+:compteur = 1;
+:nbRépétitions = 5;
+while (compteur &lt;= nbRépétitions ?) is (oui)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+    :compteur = compteur + 1;
+endwhile (non)
+:faire quelque chose après la boucle;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<p>Dans la plupart des langages de programmation, il existe un opérateur spécial
+pour incrémenter un entier, ce qui signifie qu&rsquo;il va ajouter 1 à la valeur
+actuelle d&rsquo;un nombre entier. Écrire <code>compteur++</code> est équivalent à
+écrire <code>compteur = compteur + 1</code>. Il est également possible de commencer
+avec <code>count = 0</code> au lieu de commencer avec 1. Pour faire le même nombre
+d&rsquo;itérations à travers la boucle, nous devons changer la condition de la boucle
+pour utiliser <code>&lt;</code> au lieu de <code>&lt;=</code>.</p>
+<p><img alt="Boucles avec compteur 2" src="https://cdn-0.plantuml.com/plantuml/png/TL0xJiH03Erz2dTij0qKK6n0RCK1u0JUnAkrcDZ3Z0SaJaD9pZ4NOuW0HGWikR3rFdxUPwVaPGgG7qKZ9Pfmv2ELu7Uc_Y2lZ1TNiA1WToH9Z4-5GsiSJfOPwPdKCH0Uh0o1UzWDDaNdal06pzkeX_iwnpgxk9ZcjhtiuUKaWN7p0xt6tx3R3YNZnefqWAt-DAzl6Cv4lSv9FcL6Nb-oqBujjjiUMCSlOpNj_iaJKttFAvaMtYBi6xUzwGC0" /></p>
+<details>
+<summary>PlantUML code</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:faire quelque chose avant la boucle;
+:compteur = 0;
+:nbRépétitions = 5;
+while (compteur &lt; nbRépétitions ?) is (oui)
+    :faire quelque chose à l&#39;intérieur de la boucle;
+    :compteur++;
+endwhile (non)
+:faire quelque chose après la boucle;
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h3 id="pseudocode-avec-boucle-tant-que">Pseudocode avec boucle <code>tant que</code><a class="headerlink" href="#pseudocode-avec-boucle-tant-que" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+compteur = 1
+nbRépétitions = 5
+tantque compteur &lt;= nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+    compteur = compteur + 1
+fintantque
+// faire quelque chose après la boucle
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+compteur = 0
+nbRépétitions = 5
+tantque compteur &lt; nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+    compteur++
+fintantque
+// faire quelque chose après la boucle
+</code></pre></div>
+<h3 id="pseudocode-avec-boucle-pour">Pseudocode avec boucle <code>pour</code><a class="headerlink" href="#pseudocode-avec-boucle-pour" title="Permanent link">&para;</a></h3>
+<h4 id="boucle-pour-de-style-algol">Boucle <code>pour</code> de style <em>Algol</em><a class="headerlink" href="#boucle-pour-de-style-algol" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour compteur de 0 à nbRépétitions :
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle
+</code></pre></div>
+<ul>
+<li>La valeur de départ du compteur est 0.</li>
+<li>Il va y avoir une répétition (ou itération) de la boucle pour chaque
+  valeur de 0 jusqu&rsquo;à <code>nbRépétitions</code>.<ul>
+<li>selon le langage de programmation utilisé, l&rsquo;intervalle de valeurs peut
+  être <em>inclusif</em> ou <em>exclusif</em> par rapport à la limite supérieure :<ul>
+<li>si <em>inclusif</em>, alors le nombre d&rsquo;itérations dans la boucle donnée plus
+  haut sera 6 parce qu&rsquo;il y aura une itération pour toutes les valeurs
+  entières de 0 à 5 inclusivement<ul>
+<li>dans ce cas, il serait probablement préférable d&rsquo;initialiser le
+  compteur à 1 au lieu de 0.</li>
+</ul>
+</li>
+<li>si <em>exclusif</em>, alors le nombre d&rsquo;itérations dans la boucle donnée plus
+  haut sera 5 parce que la boucle s&rsquo;arrêtera lorsque <code>compteur == 5</code>,
+  donc il aura seulement des itérations pour les valeurs de <code>compteur</code>
+  de 0, 1, 2, 3, et 4.</li>
+</ul>
+</li>
+<li>La limite inférieure (la valeur de départ) est toujours inclusive.</li>
+<li><em>Nous utiliserons la convention que l&rsquo;intervalle est </em><em>exclusif</em><em><em>,
+  comme dans le langage de programmation </em>Python</em>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="boucle-pour-de-style-c">Boucle <code>pour</code> de style <em>C</em><a class="headerlink" href="#boucle-pour-de-style-c" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour (compteur = 0; compteur &lt; nbRépétitions; compteur++) :
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle
+</code></pre></div>
+<ul>
+<li><code>compteur = 0</code> : s&rsquo;exécute une seule fois, juste avant l&rsquo;évaluation de la
+  condition de la boucle</li>
+<li><code>compteur &lt; nbRépétitions</code> : la condition s&rsquo;exécute à répétition (ou pour
+  chaque itération) de la boucle, avant le corps de la boucle<ul>
+<li>comme pour une boucle <code>tant que</code>, si la condition est vraie, alors le
+  corps de la boucle est exécutée</li>
+<li>sinon (si la condition est fausse), alors la boucle est terminée et
+  l&rsquo;exécution continue avec les instructions suivant la boucle</li>
+</ul>
+</li>
+<li><code>nbRépétitions++</code> : mise à jour du compteur, qui s&rsquo;exécute à la fin du
+  corps de la boucle, juste avant de revenir au début de la boucle pour
+  réévaluer la condition</li>
+</ul>
+<h2 id="boucles-pour-chaque">Boucles <code>pour chaque</code><a class="headerlink" href="#boucles-pour-chaque" title="Permanent link">&para;</a></h2>
+<p>En anglais : <code>for each</code>.</p>
+<p>Les boucles <code>pour chaque</code> sont différentes des autres boucles parce qu&rsquo;elles
+nécessitent normalement l&rsquo;utilisation de collections de valeurs ou d&rsquo;objets, et
+d&rsquo;itérateurs. Les collections, comme les tableaux et les listes, contiennent
+plusieurs valeurs ou objets, et les itérateurs permettent de parcourir toutes
+les valeurs ou objets d&rsquo;une collection sous forme de séquence.</p>
+<p>Les collections, les itérateurs et les boucles <code>pour chaque</code> seront présentés de
+façon plus détaillée plus tard. Pour l&rsquo;instant, seulement une idée générale du
+concept est présentée. Il est difficile de bien représenter les
+boucles <code>pour chaque</code> dans des diagrammes, donc les exemples seront uniquement
+sous forme de pseudocode.</p>
+<h3 id="boucle-pour-chaque-avec-intervalle">Boucle <code>pour chaque</code> avec intervalle<a class="headerlink" href="#boucle-pour-chaque-avec-intervalle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+nbRépétitions = 5
+pour chaque i dans intervalle(0, nbRépétitions) : 
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle
+</code></pre></div>
+<ul>
+<li>La fonction <code>intervalle(0, nbRépétitions)</code> va créer une liste de nombres
+  entiers dans l&rsquo;intervalle <code>[0, nbRépétitions)</code> :<ul>
+<li>les crochets <code>[</code> et <code>]</code> veulent dire <em>inclusif</em></li>
+<li>les parenthèses <code>(</code> et <code>)</code> veulent dire <em>exclusif</em></li>
+<li>donc les nombres dans la liste vont être 0, 1, 2, 3 et 4.</li>
+</ul>
+</li>
+<li>À la première itération, <code>i</code> va être 0</li>
+<li>À la deuxième itération, <code>i</code> va être 1</li>
+<li>À la troisième itération, <code>i</code> va être 2</li>
+<li>À la quatrième itération, <code>i</code> va être 3</li>
+<li>À la cinquième et dernière itération, <code>i</code> va être 4</li>
+</ul>
+<h3 id="boucle-pour-chaque-avec-liste-ou-tableau">Boucle <code>pour chaque</code> avec liste ou tableau<a class="headerlink" href="#boucle-pour-chaque-avec-liste-ou-tableau" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>// faire quelque chose avant la boucle
+nombres = [5, 1, 8, 3]
+pour chaque i dans nombres : 
+    // faire quelque chose à l&#39;intérieur de la boucle
+finpour
+// faire quelque chose après la boucle
+</code></pre></div>
+<ul>
+<li>À la première itération, <code>i</code> va être 5</li>
+<li>À la deuxième itération, <code>i</code> va être 1</li>
+<li>À la troisième itération, <code>i</code> va être 8</li>
+<li>À la quatrième et dernière itération, <code>i</code> va être 3</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../02_Conditionnelles/" class="btn btn-neutral float-left" title="Les conditionnelles"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/profdenis/ProgSciences" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../02_Conditionnelles/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/config.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

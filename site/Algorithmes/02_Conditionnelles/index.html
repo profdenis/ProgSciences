@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Les conditionnelles - Cours de programmation en sciences</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Les conditionnelles";
+        var mkdocs_page_input_path = "Algorithmes/02_Conditionnelles.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Cours de programmation en sciences
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Cours de programmation en sciences</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Algorithmes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01_Premiers_Algorithmes/">Introduction aux algorithmes</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Les conditionnelles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prendre-des-decisions">Prendre des décisions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trouver-le-plus-petit-de-2-nombres">Trouver le plus petit de 2 nombres</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#diagrammes">Diagrammes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#version-1-condition-a-lexterieur-du-losange">Version 1 : condition à l&rsquo;extérieur du losange</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#version-2-condition-a-linterieur-du-losange">Version 2 : condition à l&rsquo;intérieur du losange</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#discussion">Discussion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pseudocode">Pseudocode</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trouver-le-plus-petit-de-2-nombres-version-2">Trouver le plus petit de 2 nombres, version 2</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#diagramme">Diagramme</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#discussion_1">Discussion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trouver-le-plus-petit-de-2-nombres-version-3">Trouver le plus petit de 2 nombres, version 3</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#diagramme_1">Diagramme</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#discussion_2">Discussion</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mise-en-page-alternative-du-diagramme">Mise en page alternative du diagramme</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pseudocode_1">Pseudocode</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#version-1">Version 1</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#version-2">Version 2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#version-3">Version 3</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utiliser-un-commutateur-a-la-place-dune-sequence-de-conditions">Utiliser un commutateur à la place d&rsquo;une séquence de conditions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#le-plus-petit-de-2-nombres-avec-un-switch">Le plus petit de 2 nombres avec un switch</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#diagramme_2">Diagramme</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#discussion_3">Discussion</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03_Boucles/">Les boucles</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Cours de programmation en sciences</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Algorithmes</li>
+      <li class="breadcrumb-item active">Les conditionnelles</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/profdenis/ProgSciences/edit/master/docs/Algorithmes/02_Conditionnelles.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-conditionnelles">Les conditionnelles<a class="headerlink" href="#les-conditionnelles" title="Permanent link">&para;</a></h1>
+<h2 id="prendre-des-decisions">Prendre des décisions<a class="headerlink" href="#prendre-des-decisions" title="Permanent link">&para;</a></h2>
+<p>Les algorithmes qui ne font que prendre des entrées, calculer des valeurs
+à l&rsquo;aide de formules et produire des résultats, ne sont pas
+très intéressants, ou du moins, ils deviendront rapidement redondants. Nous 
+avons besoin d&rsquo;autres concepts de programmation pour permettre de supporter des
+algorithmes différents et plus complexes.</p>
+<p>Un concept utile est la <strong>conditionnelle</strong>, utilisée pour faire des choix
+pendant l&rsquo;exécution d&rsquo;un algorithme. On l&rsquo;appelle parfois une branche, car
+lorsque nous exécutons un algorithme, nous pouvons nous diriger vers l&rsquo;une des
+nombreuses branches en fonction de certaines conditions. Pour commencer, nous
+examinerons des exemples avec seulement 2 cas possibles, avec une condition qui
+est soit <code>vrai</code> soit <code>faux</code>.</p>
+<p>Commençons par un exemple pour donner l&rsquo;idée générale avec un algorithme
+simple. Des exemples plus complexes suivront.</p>
+<h2 id="trouver-le-plus-petit-de-2-nombres">Trouver le plus petit de 2 nombres<a class="headerlink" href="#trouver-le-plus-petit-de-2-nombres" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>Entrées</em> : 2 nombres</li>
+<li><em>Sortie</em> : le plus petit nombre des deux</li>
+</ul>
+<h3 id="diagrammes">Diagrammes<a class="headerlink" href="#diagrammes" title="Permanent link">&para;</a></h3>
+<h4 id="version-1-condition-a-lexterieur-du-losange">Version 1 : condition à l&rsquo;extérieur du losange<a class="headerlink" href="#version-1-condition-a-lexterieur-du-losange" title="Permanent link">&para;</a></h4>
+<p><img alt="Diagramme: le plus petit de 2 nombres" src="https://cdn-0.plantuml.com/plantuml/png/VP11JWCn34NtEOMNCr8tR5YqI7J51JY1cVbfBHAdYXs4E17tu6ACKY1Yqx_qj__xyj6SgxUSWhsANhXofXMHM_Adelui7w2x-z2tmXxg5PKk5LbG3t-35UrTlZup3Y6cmYvw8YqEgd8wUw1D2PIAiPv0CAUcXFnIMPSpClIwCvMs6Q2bw2ekHHKfOGxGzHeN9D8qav-XDFsqe8U1fyUv1-qvHjcIHzK-xXa9iTEwJ2Znu15iU6-L1JkAB1MqO97k_7O9I0QQJBJeJF-fez3WZbTqzRlTJNxaPdQhm7OKWtcvX2DqRJbz0m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer premier;
+:entrer deuxième;
+floating note right
+    le losange est un embranchement
+    (ou une conditionnelle)
+end note 
+if () then (premier &lt; deuxième ?)
+    :afficher premier;
+    note left
+        si la condition est
+        vraie, faire ceci
+    end note
+else (sinon) 
+    :afficher deuxième;
+    note right
+        sinon, si la condition est
+        fausse, faire ceci
+    end note
+endif
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h4 id="version-2-condition-a-linterieur-du-losange">Version 2 : condition à l&rsquo;intérieur du losange<a class="headerlink" href="#version-2-condition-a-linterieur-du-losange" title="Permanent link">&para;</a></h4>
+<p>Le losange est &ldquo;étiré&rdquo; horizontalement pour faire de la place à la condition,
+donc le losange n&rsquo;est désormais plus un losange, il devient un hexagone.</p>
+<p><img alt="Diagramme: le plus petit de 2 nombres" src="https://cdn-0.plantuml.com/plantuml/png/NP0nJWGn34NxdE9tp9Oq5Bj8RCK5E46O_CnO9FOeSIJ4YU0SUp74W615Qpq_FVlSFJOVjOJ-8hh55YiISnp57qtzITw8sxkmK-58zSQ6hR4As-bta3XUvV9UUGgvM7JH1MfED5bM3m1WYet3SVbOOc6bEYhT6r4YPjCaBgROsHIren1g70dfXlMvHPtNVIrGqxSyICRqquBxlmWy7E0h5PCDEUp6OynPvlMwdQKJavh-8wwFeIR9eRjjuKnDNs_w1000" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer premier;
+:entrer deuxième;
+floating note right
+    on peut également mettre la condition 
+    dans le noeud d&#39;embranchement
+end note 
+if (premier &lt; deuxième ?) then (oui)
+    :afficher premier;
+else (non)
+    :afficher deuxième;
+endif
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h3 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h3>
+<p>Seule l&rsquo;une des deux branches de la conditionnelle sera exécutée. Si la
+condition est vraie, ce qui signifie que le premier nombre est plus petit que
+l&rsquo;autre, alors le premier nombre sera affiché. Si la condition est fausse, alors
+la seconde branche à droite sera exécutée, et le deuxième nombre sera affiché,
+ce qui signifie que le <em>deuxième nombre n&rsquo;est pas plus petit que le premier</em>.
+Mais cela <strong>ne signifie pas</strong> que le <em>second nombre est plus grand que le
+premier</em>. Si les deux nombres sont égaux, alors la condition est fausse, donc la
+branche <strong>non</strong> sera exécutée. Les exemples suivants montreront comment traiter
+l&rsquo;égalité entre les deux nombres dans un cas spécifique, donnant ainsi 3
+possibilités, ou en d&rsquo;autres termes, donnant 3 options, ou 3 branches.</p>
+<p>Notez qu&rsquo;après une condition, les deux (ou plus) branches doivent normalement se
+rejoindre en un losange pour continuer l&rsquo;algorithme. Dans cet exemple,
+l&rsquo;algorithme se termine après la conditionnelle.</p>
+<h3 id="pseudocode">Pseudocode<a class="headerlink" href="#pseudocode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>premier = entrer()
+deuxième = entrer()
+si (premier &lt; deuxième)
+    afficher(premier)
+else
+    afficher(deuxième)
+</code></pre></div>
+<h2 id="trouver-le-plus-petit-de-2-nombres-version-2">Trouver le plus petit de 2 nombres, version 2<a class="headerlink" href="#trouver-le-plus-petit-de-2-nombres-version-2" title="Permanent link">&para;</a></h2>
+<p>Afficher la réponse sous forme de texte à la place de la valeur du plus petit
+nombre.</p>
+<ul>
+<li><em>Entrées</em> : 2 nombres</li>
+<li><em>Sortie</em> : un message disant que soit le premier nombre ou le deuxième nombre
+  est le plus petit des 2 nombres</li>
+</ul>
+<h3 id="diagramme">Diagramme<a class="headerlink" href="#diagramme" title="Permanent link">&para;</a></h3>
+<p><img alt="Diagramme: le plus petit de 2 nombres version 2" src="https://cdn-0.plantuml.com/plantuml/png/VOynJWGn34NxdE9hgzcIXc87YQcew3X1O7uq5eaJEOw4E17tu6AC430Dsixoz_FNMxf7yr5owA-YBLeiM9dYoFvGrP_adRYv3TzNuK9rew4PYz3clyNAyIQV7uLpa8Jf9yVT4ToVuHiLKnro3W1mYId9oqR3wP7uHRIMPoFO7PbeUNGqklXf3ioTcBJgF_nHTFM3hf9sbzh2ii-xzHS0" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer premier;
+:entrer deuxième;
+if (premier &lt; deuxième?) then (oui)
+    :afficher &quot;Le premier nombre est le plus petit&quot;;
+else (non)
+    :afficher &quot;Le deuxième nombre est le plus petit&quot;;
+endif
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h3 id="discussion_1">Discussion<a class="headerlink" href="#discussion_1" title="Permanent link">&para;</a></h3>
+<p>Cet exemple n&rsquo;est pas tout à fait correct, car si le deuxième nombre n&rsquo;est pas
+plus grand que le premier, cela ne signifie pas automatiquement que le deuxième
+nombre est le plus petit des 2 : ils pourraient être égaux. Lors de l&rsquo;affichage
+de la valeur du plus petit nombre, cela n&rsquo;a pas d&rsquo;importance, nous obtiendrons
+le bon résultat, mais lors de l&rsquo;affichage d&rsquo;un message texte, cela ne sera pas
+correct dans le cas spécifique où les 2 valeurs sont égales. Le prochain exemple
+utilise une conditionnelle à l&rsquo;intérieur d&rsquo;une autre conditionnelle pour
+distinguer les 3 cas.</p>
+<h2 id="trouver-le-plus-petit-de-2-nombres-version-3">Trouver le plus petit de 2 nombres, version 3<a class="headerlink" href="#trouver-le-plus-petit-de-2-nombres-version-3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><em>Entrées</em> : 2 nombres</li>
+<li><em>Sortie</em> : un message disant que soit le premier nombre ou le deuxième nombre
+  est le plus petit des 2 nombres, ou un message qui dit que les 2 nombres sont
+  égaux</li>
+</ul>
+<h3 id="diagramme_1">Diagramme<a class="headerlink" href="#diagramme_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Diagramme: le plus petit de 2 nombres version 3" src="https://cdn-0.plantuml.com/plantuml/png/VOqnJWCn44Lxd-8hrQQaeSWYI4L5nmaCEoOZxB7b6KiH9u9pv69Okmaf5fZ2icQUtjkh-MejHQVlBCLNdp1Hy2tQOnPxvW_2pQsRARSZiKeLfL9YgkFFOg9svDDdej5nmB257KWmd3dSNG4yR1twx7m8_7henyqJuG9AJY-LG6g8VHkRef2nRKP7KGaOb2NBelYjTBykhMjNv9yU-ipD9Vc7IsVPsQFGB8RJrvjlnuj29WvkUTLoSVl-Rob-0m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer premier;
+:entrer deuxième;
+if () then (premier &lt; deuxième ?)
+    :afficher &quot;Le premier nombre est le plus petit&quot;;
+else  (sinon)
+    if () then (premier &gt; deuxième ?)
+        :afficher &quot;Le deuxième nombre est le plus petit&quot;;
+    else (sinon)
+        :afficher &quot;Les deux nombres sont égaux&quot;;
+    endif
+endif
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h3 id="discussion_2">Discussion<a class="headerlink" href="#discussion_2" title="Permanent link">&para;</a></h3>
+<p>Lorsque nous avons 3 cas (ou branches) ou plus, une seule conditionnelle ne
+suffira pas, car elle ne distingue que 2 cas, la partie <em>vraie</em> et la partie
+<em>fausse</em> de la condition. Nous déterminons d&rsquo;abord si le premier nombre est plus
+petit que le second, puis si oui, nous procédons comme avant. Si le premier
+nombre n&rsquo;est pas plus petit que le second, alors nous avons 2 autres cas : le
+second nombre est plus petit, ou les 2 nombres sont égaux. Nous avons donc
+besoin d&rsquo;une autre conditionnelle pour distinguer ces 2 cas.</p>
+<h4 id="mise-en-page-alternative-du-diagramme">Mise en page alternative du diagramme<a class="headerlink" href="#mise-en-page-alternative-du-diagramme" title="Permanent link">&para;</a></h4>
+<p>Ce diagramme représente exactement le même algorithme, mais les noeuds sont
+agencés différemment.</p>
+<p><img alt="Mise en page alternative du diagram" src="https://cdn-0.plantuml.com/plantuml/png/bOsnIaD144Nx_OfhghpInY9FD9KWs0dsQzviChWxkypCGl2Bz3loOyP7D88Ws0ttphbdRHxLUyd1NbXQr5WmKOez-rqLV-HNmkLLk6WQjoMY6psHEczYla-e4bOahgHeIeL9n-zWehxdmrkXCN32yjJZ-bpWTe3lIB2idOS00AkO4czsf5Wy4BuOgULP2MIEV4npDpHoziKObb9b06KZ_BJS_CDo_lp3CnjcsUy5coTEjC6gE0xlszZtdw1Cd89vRM5zl7l97m00" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+!pragma useVerticalIf on
+:entrer premier;
+:entrer deuxième;
+if (premier &lt; deuxième ?) then (oui)
+    :afficher &quot;Le premier nombre est le plus petit&quot;;
+(non) else if (premier &gt; deuxième ?) then (oui)
+    :afficher &quot;Le deuxième nombre est le plus petit&quot;;
+else (non)
+    :afficher &quot;Les deux nombres sont égaux&quot;;
+endif
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h2 id="pseudocode_1">Pseudocode<a class="headerlink" href="#pseudocode_1" title="Permanent link">&para;</a></h2>
+<h3 id="version-1">Version 1<a class="headerlink" href="#version-1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>premier = lire(&quot;Entrez le premier nombre: &quot;)
+deuxième = lire(&quot;Entrez le deuxième nombre: &quot;)
+si premier &lt; deuxième
+    afficher(premier)
+sinon
+    afficher(deuxième)
+fin si
+</code></pre></div>
+<h4 id="version-2">Version 2<a class="headerlink" href="#version-2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>premier = lire(&quot;Entrez le premier nombre: &quot;)
+deuxième = lire(&quot;Entrez le deuxième nombre: &quot;)
+si premier &lt; deuxième
+    afficher(&quot;Le premier nombre est le plus petit&quot;)
+sinon
+    afficher(&quot;Le deuxième nombre est le plus petit&quot;)
+fin si
+</code></pre></div>
+<h4 id="version-3">Version 3<a class="headerlink" href="#version-3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>premier = lire(&quot;Entrez le premier nombre: &quot;)
+deuxième = lire(&quot;Entrez le deuxième nombre: &quot;)
+si premier &lt; deuxième
+    afficher(&quot;Le premier nombre est le plus petit&quot;)
+sinon
+    si premier &gt; deuxième :
+        afficher(&quot;Le deuxième nombre est le plus petit&quot;)
+    sinon :
+        afficher(&quot;Les deux nombres sont égaux&quot;)
+    fin si
+fin si
+</code></pre></div>
+<h2 id="utiliser-un-commutateur-a-la-place-dune-sequence-de-conditions">Utiliser un commutateur à la place d&rsquo;une séquence de conditions<a class="headerlink" href="#utiliser-un-commutateur-a-la-place-dune-sequence-de-conditions" title="Permanent link">&para;</a></h2>
+<p>Il est souvent préférable d&rsquo;utiliser un <strong>commutateur</strong> (ou <code>switch</code> en anglais)
+pour remplacer les
+conditionnelles, surtout lorsqu&rsquo;il y a beaucoup de cas déterminés par de
+nombreuses conditions. Cela rend l&rsquo;algorithme beaucoup plus facile à suivre.
+Malheureusement, ce ne sont pas tous les langages de programmation qui
+supportent les commutateurs, et certains langages de programmation ne supportent
+que certains types spécifiques de commutateurs.</p>
+<p>L&rsquo;exemple suivant utilise un commutateur pour remplacer les conditionnelles pour
+résoudre le même problème que l&rsquo;exemple précédent. Il est suivi par un autre
+exemple avec plus de cas (ou branches), en utilisant un <code>switch</code> d&rsquo;une manière
+légèrement différente.</p>
+<h3 id="le-plus-petit-de-2-nombres-avec-un-switch">Le plus petit de 2 nombres avec un <code>switch</code><a class="headerlink" href="#le-plus-petit-de-2-nombres-avec-un-switch" title="Permanent link">&para;</a></h3>
+<h4 id="diagramme_2">Diagramme<a class="headerlink" href="#diagramme_2" title="Permanent link">&para;</a></h4>
+<p><img alt="Le plus petit de 2 nombres avec un switch" src="https://cdn-0.plantuml.com/plantuml/png/XT0zJiGm40NWVaxnjDLkIKEn0JOL5HqdCCc4MDYEvHcBY1F1EN8nhFmG2P1sEiyyVyMhHKtIx1t9cmtH9EFHScUoqySXwBFzODpSqfoYCmTDd10JUykf-bcqd4SxVNgkIDwjDZsEbnEeCS8uhcdSxJ5SJeGoPzDrjkdByV346uim-9V4O56uidLP45cj7gfLn39R_k4N_4VUxzVj3RtVF_r7odnUEO6KhZ1zlPey5eb3kzH0eaEakhnBmzy0" /></p>
+<details>
+<summary>Code PlantUML</summary>
+
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam defaultFontSize 16
+start
+:entrer premier;
+:entrer deuxième;
+switch (?) 
+case (premier &lt; deuxième ?)
+    :afficher &quot;Le premier nombre est le plus petit&quot;;
+case (       premier &gt; deuxième ?)
+     :afficher &quot;Le deuxième nombre est le plus petit&quot;;
+case (premier = deuxième)
+     :afficher &quot;Les deux nombres sont égaux&quot;;
+endswitch
+stop
+@enduml
+</code></pre></div>
+
+</details>
+
+<h4 id="discussion_3">Discussion<a class="headerlink" href="#discussion_3" title="Permanent link">&para;</a></h4>
+<p>Nous avons un seul losange avec un point d&rsquo;interrogation pour représenter le
+switch, puis nous avons des flèches étiquetées avec les différentes conditions.
+L&rsquo;algorithme suivra la flèche dont la condition évalue à <em>vrai</em>. Il ne devrait y
+avoir qu&rsquo;une seule condition qui est vraie à tout moment, pour éviter la
+confusion quant à la flèche qui doit être suivie. Il peut y avoir un cas spécial
+supplémentaire étiqueté <code>défaut</code>, qui sera utilisé si tous les autres cas sont
+faux. Dans l&rsquo;exemple ci-dessus, il n&rsquo;est pas nécessaire d&rsquo;avoir un cas <em>défaut</em>,
+car nos conditions couvrent tous les cas. Mais ici, on pourrait remplacer le
+dernier cas qui vérifie l&rsquo;égalité entre les deux nombres par un cas <em>défaut</em>,
+pour obtenir un résultat équivalent.</p>
+<p><strong>Note</strong> : ici, comme nous l&rsquo;avons fait dans les autres exemples, nous supposons
+que les valeurs d&rsquo;entrée sont du bon type, dans ce cas des nombres, pour que
+les algorithmes fonctionnent correctement. En général, nous devrions nous
+assurer que les valeurs sont du bon type. Une discussion sur les types de
+données et comment valider l&rsquo;entrée fera partie d&rsquo;un autre chapitre.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../01_Premiers_Algorithmes/" class="btn btn-neutral float-left" title="Introduction aux algorithmes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../03_Boucles/" class="btn btn-neutral float-right" title="Les boucles">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/profdenis/ProgSciences" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../01_Premiers_Algorithmes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03_Boucles/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../javascripts/config.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
