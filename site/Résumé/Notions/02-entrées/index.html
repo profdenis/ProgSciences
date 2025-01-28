@@ -1,0 +1,1474 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/02-entr%C3%A9es/">
+      
+      
+        <link rel="prev" href="../01-affichage/">
+      
+      
+        <link rel="next" href="../03-random/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>2. Lire des données sur l’entrée standard - Cours de programmation en sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-lire-des-donnees-sur-lentree-standard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-header__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours de programmation en sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Lire des données sur l&rsquo;entrée standard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/profdenis/ProgSciences" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    profdenis/ProgSciences
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Cours de programmation en sciences
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-tabs__link">
+          
+  
+  Algorithmes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Cours/01-22-janvier/" class="md-tabs__link">
+          
+  
+  Résumé
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-nav__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cours de programmation en sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/profdenis/ProgSciences" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    profdenis/ProgSciences
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours de programmation en sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algorithmes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux algorithmes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/02_Conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/03_Boucles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les boucles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Résumé
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Résumé
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/01-22-janvier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Cours du 22 janvier 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/02-29-janvier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Cours du 29 janvier 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/03-05-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Cours du 5 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/04-12-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cours du 12 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/05-19-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cours du 19 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/06-26-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Cours du 26 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Affichage sur la sortie standard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Lire des données sur l&rsquo;entrée standard
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Lire des données sur l&rsquo;entrée standard
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-fonction-input-et-la-conversion-en-int-ou-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      La fonction input() et la conversion en int ou float
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La fonction input() et la conversion en int ou float">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-utilisation-de-base-de-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Utilisation de base de input()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conversion-en-int-ou-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Conversion en int ou float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-risque-derreurs-lors-de-la-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Risque d&rsquo;erreurs lors de la conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-importants-a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points importants à retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differences-entre-int-round-et-le-formatage-2f-dans-les-f-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences entre int, round et le formatage .2f dans les f-strings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Différences entre int, round et le formatage .2f dans les f-strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fonction-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Fonction int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fonction-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Fonction round
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-formatage-avec-2f-dans-les-f-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Formatage avec .2f dans les f-strings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences-entre-round-et-2f" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences entre round et .2f
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resume-des-differences-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé des différences principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#est-ce-que-les-f-strings-utilisent-la-regle-round-half-to-even-comme-la-fonction-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      Est-ce que les f-strings utilisent la règle &ldquo;round half to even&rdquo; comme la fonction round ?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Importation de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Module numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-pyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Module pyplot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-fonction-input-et-la-conversion-en-int-ou-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      La fonction input() et la conversion en int ou float
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La fonction input() et la conversion en int ou float">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-utilisation-de-base-de-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Utilisation de base de input()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conversion-en-int-ou-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Conversion en int ou float
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-risque-derreurs-lors-de-la-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Risque d&rsquo;erreurs lors de la conversion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-importants-a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points importants à retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differences-entre-int-round-et-le-formatage-2f-dans-les-f-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences entre int, round et le formatage .2f dans les f-strings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Différences entre int, round et le formatage .2f dans les f-strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fonction-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Fonction int
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fonction-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Fonction round
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-formatage-avec-2f-dans-les-f-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Formatage avec .2f dans les f-strings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences-entre-round-et-2f" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences entre round et .2f
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resume-des-differences-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé des différences principales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#est-ce-que-les-f-strings-utilisent-la-regle-round-half-to-even-comme-la-fonction-round" class="md-nav__link">
+    <span class="md-ellipsis">
+      Est-ce que les f-strings utilisent la règle &ldquo;round half to even&rdquo; comme la fonction round ?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="2-lire-des-donnees-sur-lentree-standard">2. Lire des données sur l&rsquo;entrée standard<a class="headerlink" href="#2-lire-des-donnees-sur-lentree-standard" title="Permanent link">&para;</a></h1>
+<h2 id="la-fonction-input-et-la-conversion-en-int-ou-float">La fonction <code>input()</code> et la conversion en <code>int</code> ou <code>float</code><a class="headerlink" href="#la-fonction-input-et-la-conversion-en-int-ou-float" title="Permanent link">&para;</a></h2>
+<p>La fonction <code>input()</code> permet de demander une saisie à l&rsquo;utilisateur. Par défaut, elle retourne toujours une <strong>chaîne de
+caractères</strong> (<code>str</code>). Si vous souhaitez utiliser cette entrée comme un nombre, il faut la convertir en un type numérique
+comme <code>int</code> ou <code>float</code>.</p>
+<h3 id="1-utilisation-de-base-de-input">1. Utilisation de base de <code>input()</code><a class="headerlink" href="#1-utilisation-de-base-de-input" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est votre nom ? &quot;</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bonjour, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> !&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Explication</strong> : Le texte entre parenthèses est affiché comme un message pour guider l&rsquo;utilisateur.</li>
+</ul>
+<h3 id="2-conversion-en-int-ou-float">2. Conversion en <code>int</code> ou <code>float</code><a class="headerlink" href="#2-conversion-en-int-ou-float" title="Permanent link">&para;</a></h3>
+<p>Pour traiter des nombres, utilisez les fonctions de conversion <code>int()</code> ou <code>float()</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel âge avez-vous ? &quot;</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c1"># Conversion en entier</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">poids</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est votre poids (en kg) ? &quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">poids</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">poids</span><span class="p">)</span>  <span class="c1"># Conversion en nombre décimal</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Votre poids est </span><span class="si">{</span><span class="n">poids</span><span class="si">}</span><span class="s2"> kg.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="3-risque-derreurs-lors-de-la-conversion">3. Risque d&rsquo;erreurs lors de la conversion<a class="headerlink" href="#3-risque-derreurs-lors-de-la-conversion" title="Permanent link">&para;</a></h3>
+<p>Si l&rsquo;utilisateur saisit une valeur non convertible (par exemple, du texte au lieu d&rsquo;un nombre), Python génère une erreur
+de type <strong><code>ValueError</code></strong>.</p>
+<p><strong>Exemple d&rsquo;erreur :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">valeur</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez un nombre : &quot;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">valeur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>  <span class="c1"># Erreur si l&#39;entrée n&#39;est pas un nombre</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Si l&#39;utilisateur tape &quot;abc&quot;, l&#39;erreur sera :</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># ValueError: invalid literal for int() with base 10: &#39;abc&#39;</span>
+</span></code></pre></div>
+<h3 id="points-importants-a-retenir">Points importants à retenir<a class="headerlink" href="#points-importants-a-retenir" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La conversion doit être utilisée uniquement si l&rsquo;entrée est valide.</li>
+<li>Sans gestion d&rsquo;erreurs (<code>try/except</code>), le programme s&rsquo;arrêtera en cas de problème.</li>
+</ul>
+<details class="note">
+<summary>Citations</summary>
+<ul>
+<li>[1] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.w3schools.com/python/ref_func_input.asp</a></li>
+<li>[2] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://labex.io/questions/how-to-handle-type-conversion-errors-in-python-290726</a></li>
+<li>[3] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.docstring.fr/blog/interagir-avec-un-utilisateur-grace-la-fonction-in/</a></li>
+<li>[4] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://llego.dev/posts/handling-errors-exceptions-type-conversion-fails-python/</a></li>
+<li>[5] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://cscircles.cemc.uwaterloo.ca/5-fr/</a></li>
+<li>[6] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://docs.python.org/fr/3/tutorial/errors.html</a></li>
+<li>[7] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://apprendre.modulo-info.ch/prog1/questionner.html</a></li>
+<li>[8] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.workdispo.com/blog/input-python</a></li>
+</ul>
+</details>
+<hr />
+<h2 id="differences-entre-int-round-et-le-formatage-2f-dans-les-f-strings">Différences entre <code>int</code>, <code>round</code> et le formatage <code>.2f</code> dans les <em>f-strings</em><a class="headerlink" href="#differences-entre-int-round-et-le-formatage-2f-dans-les-f-strings" title="Permanent link">&para;</a></h2>
+<h3 id="1-fonction-int">1. Fonction <code>int</code><a class="headerlink" href="#1-fonction-int" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La fonction <code>int()</code> <strong>tronque</strong> toujours la partie décimale d&rsquo;un nombre flottant, sans arrondi.</li>
+<li>Elle convertit un flottant en entier en supprimant tout ce qui suit la virgule.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">5.76543</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># Sortie : 5</span>
+</span></code></pre></div>
+<h3 id="2-fonction-round">2. Fonction <code>round</code><a class="headerlink" href="#2-fonction-round" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La fonction <code>round()</code> <strong>arrondit</strong> un nombre au plus proche entier ou à un certain nombre de décimales.</li>
+<li>Par défaut, elle retourne un entier si aucun argument pour les décimales n&rsquo;est fourni.</li>
+<li>Elle utilise l&rsquo;arrondi &ldquo;pair&rdquo; (ou &ldquo;round half to even&rdquo;) : si le chiffre après la virgule est exactement 0.5, il
+  choisit l&rsquo;entier <strong>pair</strong> le plus proche.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">4.5</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mf">5.5</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># Sortie : 4 (arrondi vers l&#39;entier pair)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>  <span class="c1"># Sortie : 6 (arrondi vers l&#39;entier pair)</span>
+</span></code></pre></div>
+<p>Avec précision :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">z</span> <span class="o">=</span> <span class="mf">5.76543</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Sortie : 5.77 (arrondi à deux décimales)</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Il est important de noter que <code>round</code> peut parfois donner des résultats surprenants en raison des limitations de la 
+représentation en virgule flottante. Par exemple :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mf">2.675</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Résultat : 2.67 (au lieu de 2.68)</span>
+</span></code></pre></div></p>
+</div>
+<h3 id="3-formatage-avec-2f-dans-les-f-strings">3. Formatage avec <code>.2f</code> dans les <em>f-strings</em><a class="headerlink" href="#3-formatage-avec-2f-dans-les-f-strings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Le formatage <code>.2f</code> dans une f-string ne modifie pas la valeur réelle du nombre, mais contrôle uniquement son affichage
+  en arrondissant visuellement à deux décimales.</li>
+<li>Contrairement à <code>round()</code>, il ne retourne pas un nouveau nombre, mais une chaîne formatée.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">5.76543</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : 5.77 (affichage arrondi à deux décimales)</span>
+</span></code></pre></div>
+<h3 id="differences-entre-round-et-2f">Différences entre <code>round</code> et <code>.2f</code><a class="headerlink" href="#differences-entre-round-et-2f" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fonctionnalité</th>
+<th><code>round()</code></th>
+<th><code>.2f</code> dans <em>f-strings</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type de retour</strong></td>
+<td>Nombre (<code>int</code> ou <code>float</code>)</td>
+<td>Chaîne de caractères</td>
+</tr>
+<tr>
+<td><strong>Modification réelle ?</strong></td>
+<td>Oui</td>
+<td>Non (affichage uniquement)</td>
+</tr>
+<tr>
+<td><strong>Usage principal</strong></td>
+<td>Calculs</td>
+<td>Formatage visuel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resume-des-differences-principales">Résumé des différences principales<a class="headerlink" href="#resume-des-differences-principales" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>int()</code></strong> tronque sans arrondir.</li>
+<li><strong><code>round()</code></strong> modifie réellement la valeur en arrondissant.</li>
+<li><strong><code>.2f</code></strong> est utilisé pour afficher un nombre avec un format visuel précis sans changer sa valeur réelle.</li>
+</ul>
+<details class="note">
+<summary>Citations</summary>
+<ul>
+<li>[1] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.w3schools.com/python/ref_func_round.asp</a></li>
+<li>[2] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://geekflare.com/fr/round-numbers-in-python-with-examples/</a></li>
+<li>[3] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://discuss.python.org/t/built-in-types-int-round-or-truncate-please-elaborate/24840</a></li>
+<li>[4] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://waytolearnx.com/2020/07/fonction-round-python.html</a></li>
+<li>[5] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://realpython.com/python-rounding/</a></li>
+<li>[6] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.guru99.com/fr/round-function-python.html</a></li>
+<li>[7] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://www.geeksforgeeks.org/round-function-python/</a></li>
+<li>[8] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://koor.fr/Python/API/python/builtins/round.wp</a></li>
+<li>[9] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://stackoverflow.com/questions/43660910/python-difference-between-round-and-int</a></li>
+</ul>
+</details>
+<hr />
+<h2 id="est-ce-que-les-f-strings-utilisent-la-regle-round-half-to-even-comme-la-fonction-round">Est-ce que les <em>f-strings</em> utilisent la règle &ldquo;<em>round half to even</em>&rdquo; comme la fonction round ?<a class="headerlink" href="#est-ce-que-les-f-strings-utilisent-la-regle-round-half-to-even-comme-la-fonction-round" title="Permanent link">&para;</a></h2>
+<p>Non, les <strong><em>f-strings</em></strong> en Python n&rsquo;utilisent pas la règle &ldquo;<em>round half to even</em>&rdquo; comme la fonction <code>round()</code>.</p>
+<p>Les <em>f-strings</em> avec un format comme <code>.2f</code> effectuent un <strong>arrondi visuel</strong> basé sur une règle d&rsquo;arrondi classique
+(<em>round half up</em>), où les valeurs à exactement 0.5 après le dernier chiffre significatif sont arrondies
+<strong>vers le haut</strong>, indépendamment de la parité du chiffre précédent. En revanche, la fonction <code>round()</code> suit la règle
+&ldquo;<em>round half to even</em>&rdquo; (ou &ldquo;<em>banker&rsquo;s rounding</em>&rdquo;), qui arrondit les valeurs à 0.5 vers l&rsquo;entier pair le plus
+proche[1][3][5].</p>
+<p><strong>Exemple :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mf">2.5</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : 3 (arrondi classique)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># Sortie : 2 (arrondi pair)</span>
+</span></code></pre></div>
+<details class="note">
+<summary>Citations</summary>
+<ul>
+<li>[1] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://sparkbyexamples.com/python/python-limit-floats-to-two-decimal-points/</a></li>
+<li>[2] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://rowannicholls.github.io/python/data/rounding_off.html</a></li>
+<li>[3] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://realpython.com/python-rounding/</a></li>
+<li>[4] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://en.wikipedia.org/wiki/Nearest_integer_function</a></li>
+<li>[5] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://github.com/rust-lang/rust/issues/70336</a></li>
+<li>[6] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://stackoverflow.com/questions/10825926/python-3-x-rounding-behavior</a></li>
+<li>[7] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://gist.ly/youtube-summarizer/mastering-pythons-round-function-a-comprehensive-guide</a></li>
+<li>[8] <a href="https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html">https://schneide.blog/tag/python/</a></li>
+</ul>
+</details>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Page rédigée en partie avec l&rsquo;aide d&rsquo;un assistant IA, principalement à l&rsquo;aide de Perplexity AI, avec le <em>LLM</em>
+<strong>Claude 3.5 Sonnet</strong>. L&rsquo;IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
+structure. Toutes les informations ont été vérifiées, éditées et complétées par l&rsquo;auteur.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-affichage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Affichage sur la sortie standard">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Affichage sur la sortie standard
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-random/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Importation de modules">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Importation de modules
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

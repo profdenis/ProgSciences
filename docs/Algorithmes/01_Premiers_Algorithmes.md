@@ -108,8 +108,7 @@ d'entrée (probablement un clavier), et que les résultats seront affichés à
 l'utilisateur à l'aide d'un dispositif de sortie (probablement un écran). Nous
 verrons plus tard que les entrées et les sorties peuvent ne pas être prises ou
 données directement par/aux utilisateurs, mais pourraient plutôt être données à
-une
-fonction en tant que paramètres, ou renvoyées par une fonction.
+une fonction en tant que paramètres, ou renvoyées par une fonction.
 
 - *Entrées* : la `largeur` et la `hauteur` du rectangle
 - *Sortie* : l'`aire` du rectangle
