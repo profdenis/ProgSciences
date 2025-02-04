@@ -179,9 +179,12 @@ print(round(x))  # Sortie : 2 (arrondi pair)
     - [7] [https://gist.ly/youtube-summarizer/mastering-pythons-round-function-a-comprehensive-guide](https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html)
     - [8] [https://schneide.blog/tag/python/](https://www.erpi.com/fr/bundle-initiation-programmation-9782766157464.html)
 
+
+
 -------
 
-!!! note "Note"
-    Page rédigée en partie avec l'aide d'un assistant IA, principalement à l'aide de Perplexity AI, avec le *LLM*
-    **Claude 3.5 Sonnet**. L'IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
-    structure. Toutes les informations ont été vérifiées, éditées et complétées par l'auteur.
+??? info "Utilisation de l'IA"
+      Page rédigée en partie avec l'aide d'un assistant IA, principalement à l'aide de Perplexity AI, avec le *LLM*
+      **Claude 3.5 Sonnet**. L'IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
+      structure. Toutes les informations ont été vérifiées, éditées et complétées par l'auteur.
+      

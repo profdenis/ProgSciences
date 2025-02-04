@@ -9,3 +9,7 @@
 4. La fonction `int`
 5. La fonction `float`
 6. La fonction `round`
+
+## Livre
+
+- Chapitre 3, section 3.1 et 3.2

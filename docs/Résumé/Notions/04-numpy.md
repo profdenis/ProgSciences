@@ -14,7 +14,7 @@ carrées, fonctions trigonométriques, et constantes mathématiques.
 *NumPy* fournit des constantes intégrées pour les nombres mathématiques importants :
 
 - **`np.e`** : La base du logarithme naturel (environ 2.718).
-- **`np.pi`** : La valeur de $$\pi$$ (environ 3.14159).
+- **`np.pi`** : La valeur de $\pi$ (environ 3.14159).
 
 **Exemple :**
 
@@ -33,8 +33,8 @@ print(f"Constante pi : {np.pi}")
 
 *NumPy* propose plusieurs fonctions pour calculer différents types de logarithmes :
 
-- **`np.log(x)`** : Logarithme naturel ($$\ln(x)$$).
-- **`np.log10(x)`** : Logarithme décimal ($$\log_{10}(x)$$).
+- **`np.log(x)`** : Logarithme naturel ($\ln(x)$).
+- **`np.log10(x)`** : Logarithme décimal ($\log_{10}(x)$).
 
 **Exemple :**
 
@@ -100,18 +100,18 @@ print(deg)  # Sortie : [  0.  90. 180.]
 
 ### Résumé des principales fonctions mathématiques de *NumPy*
 
-| Fonction        | Description                           | Exemple d'utilisation                   |
-|-----------------|---------------------------------------|-----------------------------------------|
-| `np.e`          | Constante $$e$$                       | `np.e` → `2.718281828459045`            |
-| `np.pi`         | Constante $$\pi$$                     | `np.pi` → `3.141592653589793`           |
-| `np.log(x)`     | Logarithme naturel ($$\ln(x)$$)       | `np.log(10)` → `2.302585092994046`      |
-| `np.log10(x)`   | Logarithme décimal ($$\log_{10}(x)$$) | `np.log10(100)` → `2.0`                 |
-| `np.sqrt(x)`    | Racine carrée                         | `np.sqrt(16)` → `4.0`                   |
-| `np.sin(x)`     | Sinus (angle en radians)              | `np.sin(np.pi/2)` → `1.0`               |
-| `np.cos(x)`     | Cosinus (angle en radians)            | `np.cos(0)` → `1.0`                     |
-| `np.tan(x)`     | Tangente (angle en radians)           | `np.tan(np.pi/4)` → `1.0`               |
-| `np.radians(x)` | Conversion degrés → radians           | `np.radians(180)` → `3.141592653589793` |
-| `np.degrees(x)` | Conversion radians → degrés           | `np.degrees(np.pi/2)` → `90.0`          |
+| Fonction        | Description                         | Exemple d'utilisation                   |
+|-----------------|-------------------------------------|-----------------------------------------|
+| `np.e`          | Constante $e$                       | `np.e` → `2.718281828459045`            |
+| `np.pi`         | Constante $\pi$                     | `np.pi` → `3.141592653589793`           |
+| `np.log(x)`     | Logarithme naturel ($\ln(x)$)       | `np.log(10)` → `2.302585092994046`      |
+| `np.log10(x)`   | Logarithme décimal ($\log_{10}(x)$) | `np.log10(100)` → `2.0`                 |
+| `np.sqrt(x)`    | Racine carrée                       | `np.sqrt(16)` → `4.0`                   |
+| `np.sin(x)`     | Sinus (angle en radians)            | `np.sin(np.pi/2)` → `1.0`               |
+| `np.cos(x)`     | Cosinus (angle en radians)          | `np.cos(0)` → `1.0`                     |
+| `np.tan(x)`     | Tangente (angle en radians)         | `np.tan(np.pi/4)` → `1.0`               |
+| `np.radians(x)` | Conversion degrés → radians         | `np.radians(180)` → `3.141592653589793` |
+| `np.degrees(x)` | Conversion radians → degrés         | `np.degrees(np.pi/2)` → `90.0`          |
 
 
 Avec ces outils, *NumPy* simplifie considérablement les calculs scientifiques et numériques ! Vous pouvez maintenant
@@ -119,9 +119,12 @@ manipuler facilement des logarithmes, racines carrées et fonctions trigonométr
 exprimés en degrés ou radians.
 
 
+
+
 -------
 
-!!! note "Note"
-     Page rédigée en partie avec l'aide d'un assistant IA, principalement à l'aide de Perplexity AI, avec le *LLM*
-     **Claude 3.5 Sonnet**. L'IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
-     structure. Toutes les informations ont été vérifiées, éditées et complétées par l'auteur.
+??? info "Utilisation de l'IA"
+      Page rédigée en partie avec l'aide d'un assistant IA, principalement à l'aide de Perplexity AI, avec le *LLM*
+      **Claude 3.5 Sonnet**. L'IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
+      structure. Toutes les informations ont été vérifiées, éditées et complétées par l'auteur.
+      
