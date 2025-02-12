@@ -2,7 +2,12 @@
 
 ## Sujets
 
-1. Définition de fonction
+1. Définition de fonctions
+    - `def` pour définir une fonction
+    - indentation du code de la fonction
+    - paramètres et arguments
+    - appels de fonctions
+    - variables globales et variables locales
 
 ## Livre
 
