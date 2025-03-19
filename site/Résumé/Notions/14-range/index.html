@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/06-fonctions/">
+        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/14-range/">
       
       
-        <link rel="prev" href="../05-pyplot/">
+        <link rel="prev" href="../13-for/">
       
       
-        <link rel="next" href="../07-expressions-bool%C3%A9ennes/">
+        <link rel="next" href="../15-for-pyplot/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>6. Définition de fonctions - Cours de programmation en sciences</title>
+        <title>14. La fonction range - Cours de programmation en sciences</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#6-definition-de-fonctions" class="md-skip">
+        <a href="#14-la-fonction-range" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Définition de fonctions
+              14. La fonction range
             
           </span>
         </div>
@@ -872,30 +872,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    6. Définition de fonctions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../06-fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -904,146 +884,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-aux-fonctions-en-programmation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction aux fonctions en programmation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction simple
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-avec-plusieurs-parametres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction avec plusieurs paramètres
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Définition d’une fonction avec plusieurs paramètres">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntaxe de base
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple : Calcul du volume d&rsquo;une pyramide à 4 côtés
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation-de-la-fonction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilisation de la fonction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#points-importants-a-retenir" class="md-nav__link">
-    <span class="md-ellipsis">
-      Points importants à retenir
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs courantes à éviter lors de la définition de fonctions en Python
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Erreurs courantes à éviter lors de la définition de fonctions en Python">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-syntaxe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de syntaxe
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-portee-et-de-nommage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de portée et de nommage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-liees-aux-arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs liées aux arguments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-conception" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de conception
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1200,10 +1040,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../14-range/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    14. La fonction range
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1212,6 +1072,146 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntaxe-de-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe de range()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differents-cas-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différents Cas d&rsquo;Utilisation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Différents Cas d’Utilisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-un-seul-parametre-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Un seul paramètre (stop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deux-parametres-start-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Deux paramètres (start, stop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-trois-parametres-start-stop-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Trois paramètres (start, stop, step)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-valeur-negative-pour-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Valeur négative pour step
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-avec-une-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec une Boucle while
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-pratiques-avec-des-boucles-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples Pratiques avec des Boucles for
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples Pratiques avec des Boucles for">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-1-calculer-une-sommation-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple 1 : Calculer une sommation simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-2-iteration-avec-un-pas-negatif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple 2 : Itération avec un pas négatif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-3-table-de-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple 3 : Table de multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1322,64 +1322,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-aux-fonctions-en-programmation" class="md-nav__link">
+  <a href="#syntaxe-de-range" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction aux fonctions en programmation
+      Syntaxe de range()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#definition-dune-fonction-simple" class="md-nav__link">
+  <a href="#differents-cas-dutilisation" class="md-nav__link">
     <span class="md-ellipsis">
-      Définition d&rsquo;une fonction simple
+      Différents Cas d&rsquo;Utilisation
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-avec-plusieurs-parametres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction avec plusieurs paramètres
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Définition d’une fonction avec plusieurs paramètres">
+    <nav class="md-nav" aria-label="Différents Cas d’Utilisation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
+  <a href="#1-un-seul-parametre-stop" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntaxe de base
+      1. Un seul paramètre (stop)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" class="md-nav__link">
+  <a href="#2-deux-parametres-start-stop" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemple : Calcul du volume d&rsquo;une pyramide à 4 côtés
+      2. Deux paramètres (start, stop)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#utilisation-de-la-fonction" class="md-nav__link">
+  <a href="#3-trois-parametres-start-stop-step" class="md-nav__link">
     <span class="md-ellipsis">
-      Utilisation de la fonction
+      3. Trois paramètres (start, stop, step)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#points-importants-a-retenir" class="md-nav__link">
+  <a href="#4-valeur-negative-pour-step" class="md-nav__link">
     <span class="md-ellipsis">
-      Points importants à retenir
+      4. Valeur négative pour step
     </span>
   </a>
   
@@ -1391,46 +1382,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" class="md-nav__link">
+  <a href="#comparaison-avec-une-boucle-while" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs courantes à éviter lors de la définition de fonctions en Python
+      Comparaison avec une Boucle while
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Erreurs courantes à éviter lors de la définition de fonctions en Python">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-pratiques-avec-des-boucles-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples Pratiques avec des Boucles for
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples Pratiques avec des Boucles for">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#erreurs-de-syntaxe" class="md-nav__link">
+  <a href="#exemple-1-calculer-une-sommation-simple" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs de syntaxe
+      Exemple 1 : Calculer une sommation simple
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#erreurs-de-portee-et-de-nommage" class="md-nav__link">
+  <a href="#exemple-2-iteration-avec-un-pas-negatif" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs de portée et de nommage
+      Exemple 2 : Itération avec un pas négatif
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#erreurs-liees-aux-arguments" class="md-nav__link">
+  <a href="#exemple-3-table-de-multiplication" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs liées aux arguments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-conception" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de conception
+      Exemple 3 : Table de multiplication
     </span>
   </a>
   
@@ -1438,6 +1429,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés
+    </span>
+  </a>
   
 </li>
       
@@ -1459,184 +1459,114 @@
   
 
 
-<h1 id="6-definition-de-fonctions">6. Définition de fonctions<a class="headerlink" href="#6-definition-de-fonctions" title="Permanent link">&para;</a></h1>
-<h2 id="introduction-aux-fonctions-en-programmation">Introduction aux fonctions en programmation<a class="headerlink" href="#introduction-aux-fonctions-en-programmation" title="Permanent link">&para;</a></h2>
-<p>Dans nos programmes précédents, nous avons déjà utilisé plusieurs fonctions sans les définir nous-mêmes.
-Par exemple, nous avons employé <code>print()</code> pour afficher du texte à l&rsquo;écran, <code>input()</code> pour demander une saisie à
-l&rsquo;utilisateur, et <code>numpy.cos()</code> (ou <code>np.cos()</code>) pour calculer le cosinus d&rsquo;un angle. Ces fonctions sont des outils 
-prédéfinis qui nous permettent d&rsquo;effectuer des tâches spécifiques sans avoir à réécrire le code à chaque fois.</p>
-<p>En programmation, les fonctions sont similaires aux fonctions mathématiques que vous connaissez déjà. Elles prennent des
-entrées (appelées arguments ou paramètres), effectuent des opérations sur ces entrées, et produisent un résultat. Par
-exemple, la fonction mathématique <span class="arithmatex">\(f(x) = x^2\)</span> prend un nombre <span class="arithmatex">\(x\)</span> en entrée et retourne son carré.</p>
-<h2 id="definition-dune-fonction-simple">Définition d&rsquo;une fonction simple<a class="headerlink" href="#definition-dune-fonction-simple" title="Permanent link">&para;</a></h2>
-<p>Voyons maintenant comment définir notre propre fonction en Python. Prenons l&rsquo;exemple d&rsquo;une fonction qui calcule l&rsquo;aire
-d&rsquo;un cercle.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">aire_cercle</span><span class="p">(</span><span class="n">rayon</span><span class="p">):</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">aire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rayon</span> <span class="o">**</span> <span class="mi">2</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">aire</span>
+<h1 id="14-la-fonction-range">14. La fonction <code>range</code><a class="headerlink" href="#14-la-fonction-range" title="Permanent link">&para;</a></h1>
+<p>La fonction <code>range()</code> est une fonction intégrée en Python qui génère une séquence de nombres entiers. Elle est
+couramment utilisée dans les boucles <code>for</code> pour itérer sur une plage de valeurs. Cette fonction est très flexible grâce
+à ses trois paramètres : <code>start</code>, <code>stop</code> et <code>step</code>.</p>
+<hr />
+<h3 id="syntaxe-de-range">Syntaxe de <code>range()</code><a class="headerlink" href="#syntaxe-de-range" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
 </span></code></pre></div>
-<p>Examinons les différentes parties de cette définition de fonction :</p>
-<ol type="1">
-<li>
-<p><strong>Signature de la fonction</strong> : La ligne <code>def aire_cercle(rayon):</code> est la signature de la fonction. Elle commence par
-   le mot-clé <code>def</code>, suivi du nom de la fonction et des paramètres entre parenthèses.</p>
-</li>
-<li>
-<p><strong>Nom de la fonction</strong> : <code>aire_cercle</code> est le nom que nous avons choisi pour notre fonction. Il est préférable de
-   choisir un nom descriptif qui indique clairement ce que fait la fonction.</p>
-</li>
-<li>
-<p><strong>Paramètre</strong> : <code>rayon</code> est le paramètre de notre fonction. C&rsquo;est la valeur d&rsquo;entrée sur laquelle la fonction va
-   travailler. Une fonction peut avoir plusieurs paramètres, séparés par des virgules.</p>
-</li>
-<li>
-<p><strong>Corps de la fonction et indentation</strong> : Le corps de la fonction contient les instructions qui seront exécutées
-   lorsque la fonction sera appelée. En Python, le corps de la fonction est indenté (généralement de 4 espaces) pour
-   indiquer qu&rsquo;il fait partie de la fonction.</p>
-</li>
-<li>
-<p><strong>Instruction <em>return</em></strong> : <code>return aire</code> spécifie la valeur que la fonction doit renvoyer lorsqu&rsquo;elle est appelée. 
-   Dans ce cas, elle renvoie l&rsquo;aire calculée du cercle.</p>
-</li>
-</ol>
-<p>Pour utiliser cette fonction, nous pouvons maintenant l&rsquo;appeler en lui fournissant un rayon :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">aire_cercle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;aire d&#39;un cercle de rayon 5 est : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>Cette approche nous permet de réutiliser facilement le code pour calculer l&rsquo;aire de différents cercles sans avoir à
-réécrire la formule à chaque fois.</p>
-<h2 id="definition-dune-fonction-avec-plusieurs-parametres">Définition d&rsquo;une fonction avec plusieurs paramètres<a class="headerlink" href="#definition-dune-fonction-avec-plusieurs-parametres" title="Permanent link">&para;</a></h2>
-<p>En Python, il est très courant et souvent nécessaire de définir des fonctions qui prennent plusieurs paramètres. Cela
-permet à une fonction d&rsquo;être plus flexible et de traiter plusieurs entrées à la fois. Voici comment procéder :</p>
-<h3 id="syntaxe-de-base">Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Permanent link">&para;</a></h3>
-<p>La syntaxe pour définir une fonction avec plusieurs paramètres est similaire à celle d&rsquo;une fonction avec un seul
-paramètre, mais nous séparons les paramètres par des virgules dans la signature de la fonction.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">nom_fonction</span><span class="p">(</span><span class="n">parametre1</span><span class="p">,</span> <span class="n">parametre2</span><span class="p">,</span> <span class="n">parametre3</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># Corps de la fonction</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># Opérations utilisant les paramètres</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">return</span> <span class="n">resultat</span>
-</span></code></pre></div>
-<h3 id="exemple-calcul-du-volume-dune-pyramide-a-4-cotes"><em>Exemple</em> : Calcul du volume d&rsquo;une pyramide à 4 côtés<a class="headerlink" href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" title="Permanent link">&para;</a></h3>
-<p>Pour calculer le volume d&rsquo;une pyramide à 4 côtés (ou pyramide à base rectangulaire), nous avons besoin de trois 
-paramètres : la longueur de la base, la largeur de la base, et la hauteur de la pyramide. La formule pour le volume 
-est :</p>
-<p><span class="arithmatex">\(V = \frac{1}{3} \times longueur \times largeur \times hauteur\)</span>.</p>
-<p>Voici comment nous pouvons définir cette fonction en Python :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">volume_pyramide</span><span class="p">(</span><span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">hauteur</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">volume</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">longueur</span> <span class="o">*</span> <span class="n">largeur</span> <span class="o">*</span> <span class="n">hauteur</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">return</span> <span class="n">volume</span>
-</span></code></pre></div>
-<p>Dans cet exemple :</p>
 <ul>
-<li><code>longueur</code>, <code>largeur</code>, et <code>hauteur</code> sont les trois paramètres de la fonction.</li>
-<li>La fonction utilise ces trois paramètres pour calculer le volume de la pyramide.</li>
-<li>Le résultat est renvoyé à l&rsquo;aide de l&rsquo;instruction <code>return</code>.</li>
+<li><strong><code>start</code></strong> (optionnel) : La valeur de départ de la séquence (incluse). Par défaut, elle est égale à 0.</li>
+<li><strong><code>stop</code></strong> (obligatoire) : La valeur où la séquence s&rsquo;arrête (non incluse).</li>
+<li><strong><code>step</code></strong> (optionnel) : L&rsquo;incrément entre chaque valeur de la séquence. Par défaut, il est égal à 1.</li>
 </ul>
-<h3 id="utilisation-de-la-fonction">Utilisation de la fonction<a class="headerlink" href="#utilisation-de-la-fonction" title="Permanent link">&para;</a></h3>
-<p>Pour utiliser cette fonction, nous fournissons les valeurs pour chaque paramètre dans l&rsquo;ordre où ils sont définis :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">volume_pyramide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le volume d&#39;une pyramide de base 5x5 et de hauteur 10 est : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<hr />
+<h3 id="differents-cas-dutilisation">Différents Cas d&rsquo;Utilisation<a class="headerlink" href="#differents-cas-dutilisation" title="Permanent link">&para;</a></h3>
+<h4 id="1-un-seul-parametre-stop">1. Un seul paramètre (<code>stop</code>)<a class="headerlink" href="#1-un-seul-parametre-stop" title="Permanent link">&para;</a></h4>
+<p>Si un seul paramètre est fourni, il est interprété comme la valeur de <code>stop</code>. La séquence commence alors à 0 et
+s&rsquo;incrémente de 1 jusqu&rsquo;à (mais sans inclure) <code>stop</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Affiche : 0, 1, 2, 3, 4</span>
 </span></code></pre></div>
-<h3 id="points-importants-a-retenir">Points importants à retenir<a class="headerlink" href="#points-importants-a-retenir" title="Permanent link">&para;</a></h3>
-<ol type="1">
-<li>
-<p><strong>Ordre des paramètres</strong> : L&rsquo;ordre dans lequel vous définissez les paramètres est crucial. Lors de l&rsquo;appel de la
-   fonction, les arguments doivent être fournis dans le même ordre (longueur, largeur, hauteur).</p>
-</li>
-<li>
-<p><strong>Nombre de paramètres</strong> : Cette fonction a trois paramètres, ce qui est parfaitement acceptable. Cependant, si une
-   fonction nécessite de nombreux paramètres, il peut être judicieux de considérer d&rsquo;autres approches, comme
-   l&rsquo;utilisation d&rsquo;un dictionnaire pour les regrouper.</p>
-</li>
-<li>
-<p><strong>Noms des paramètres</strong> : Notez comment les noms <code>longueur</code>, <code>largeur</code>, et <code>hauteur</code> sont descriptifs et clairs, ce
-   qui rend la fonction plus facile à comprendre et à utiliser.</p>
-</li>
-<li>
-<p><strong>Flexibilité</strong> : Cette fonction peut calculer le volume de n&rsquo;importe quelle pyramide à base rectangulaire, pas
-   seulement celles à base carrée. Si la base est carrée, on peut simplement utiliser la même valeur pour la longueur et
-   la largeur.</p>
-</li>
-</ol>
-<p>En utilisant des fonctions avec plusieurs paramètres comme celle-ci, vous pouvez créer des outils puissants et flexibles
-pour résoudre une variété de problèmes en programmation.</p>
-<h2 id="erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python">Erreurs courantes à éviter lors de la définition de fonctions en Python<a class="headerlink" href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" title="Permanent link">&para;</a></h2>
-<h3 id="erreurs-de-syntaxe">Erreurs de syntaxe<a class="headerlink" href="#erreurs-de-syntaxe" title="Permanent link">&para;</a></h3>
-<ol type="1">
-<li>
-<p><strong>Oublier les deux-points</strong> : Toujours ajouter <code>:</code> à la fin de la ligne de définition de la fonction[3].</p>
-</li>
-<li>
-<p><strong>Indentation incorrecte</strong> : Le corps de la fonction doit être indenté, généralement de 4 espaces[3].</p>
-</li>
-<li>
-<p><strong>Oublier les parenthèses</strong> : Pour appeler une fonction, il faut utiliser des parenthèses, même si elle n&rsquo;a pas 
-   d&rsquo;arguments[3].</p>
-</li>
-</ol>
-<h3 id="erreurs-de-portee-et-de-nommage">Erreurs de portée et de nommage<a class="headerlink" href="#erreurs-de-portee-et-de-nommage" title="Permanent link">&para;</a></h3>
-<ol start="4" type="1">
-<li>
-<p><strong>Confusion entre variables locales et globales</strong> : Les variables définies dans une fonction sont locales par défaut.</p>
-</li>
-<li>
-<p><strong>Nommer une variable comme une fonction intégrée</strong> : Éviter d&rsquo;utiliser des noms comme <code>print</code> ou <code>input</code> qui
-   masqueraient les fonctions Python intégrées[1].</p>
-</li>
-</ol>
-<h3 id="erreurs-liees-aux-arguments">Erreurs liées aux arguments<a class="headerlink" href="#erreurs-liees-aux-arguments" title="Permanent link">&para;</a></h3>
-<ol start="6" type="1">
-<li>
-<p><strong>Inverser l&rsquo;ordre des arguments</strong> : Les arguments doivent être fournis dans le bon ordre. C&rsquo;est pourquoi il est 
-   important de bien nommer les paramètres.</p>
-</li>
-<li>
-<p><strong>Trop de paramètres</strong> : Limiter le nombre de paramètres pour maintenir la lisibilité et la simplicité de la
-   fonction[9].</p>
-</li>
-</ol>
-<h3 id="erreurs-de-conception">Erreurs de conception<a class="headerlink" href="#erreurs-de-conception" title="Permanent link">&para;</a></h3>
-<ol start="8" type="1">
-<li>
-<p><strong>Fonctions trop longues ou complexes</strong> : Diviser les fonctions trop longues en sous-fonctions plus petites et plus
-   simples[9].</p>
-</li>
-<li>
-<p><strong>Retourner des types de données incohérents</strong> : Une fonction devrait toujours retourner le même type de données,
-   quelle que soit la branche d&rsquo;exécution[14].</p>
-</li>
-<li>
-<p><strong>Ne pas gérer les exceptions</strong> : Utiliser des blocs <code>try/except</code> pour gérer les erreurs potentielles dans la
-    fonction[15].</p>
-</li>
-</ol>
-<p>En évitant ces erreurs courantes, vous pourrez écrire des fonctions Python plus robustes et maintenables.</p>
+<hr />
+<h4 id="2-deux-parametres-start-stop">2. Deux paramètres (<code>start</code>, <code>stop</code>)<a class="headerlink" href="#2-deux-parametres-start-stop" title="Permanent link">&para;</a></h4>
+<p>Avec deux paramètres, la séquence commence à <code>start</code> et s&rsquo;arrête avant <code>stop</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Affiche : 2, 3, 4, 5</span>
+</span></code></pre></div>
+<hr />
+<h4 id="3-trois-parametres-start-stop-step">3. Trois paramètres (<code>start</code>, <code>stop</code>, <code>step</code>)<a class="headerlink" href="#3-trois-parametres-start-stop-step" title="Permanent link">&para;</a></h4>
+<p>Avec trois paramètres, la séquence commence à <code>start</code>, s&rsquo;arrête avant <code>stop</code>, et utilise l&rsquo;incrément spécifié par
+<code>step</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Affiche : 1, 3, 5, 7, 9</span>
+</span></code></pre></div>
+<hr />
+<h4 id="4-valeur-negative-pour-step">4. Valeur négative pour <code>step</code><a class="headerlink" href="#4-valeur-negative-pour-step" title="Permanent link">&para;</a></h4>
+<p>Si le paramètre <code>step</code> est négatif, la séquence décroît. Dans ce cas, il faut que <code>start</code> soit plus grand que <code>stop</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Affiche : 10, 8, 6, 4, 2</span>
+</span></code></pre></div>
+<hr />
+<h3 id="comparaison-avec-une-boucle-while">Comparaison avec une Boucle <code>while</code><a class="headerlink" href="#comparaison-avec-une-boucle-while" title="Permanent link">&para;</a></h3>
+<p>Voici un exemple où nous utilisons une boucle <code>while</code> pour reproduire le comportement de <code>range()</code> :</p>
+<p><strong>Avec une boucle <code>while</code> :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Affiche : 1, 3, 5, 7, 9</span>
+</span></code></pre></div>
+<p><strong>Avec une boucle <code>for</code> et <code>range()</code> :</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Affiche : 1, 3, 5, 7, 9</span>
+</span></code></pre></div>
+<p>La boucle <code>for</code> avec <code>range()</code> est plus concise et réduit les erreurs liées à la gestion manuelle de l&rsquo;incrémentation.</p>
+<hr />
+<h3 id="exemples-pratiques-avec-des-boucles-for">Exemples Pratiques avec des Boucles <code>for</code><a class="headerlink" href="#exemples-pratiques-avec-des-boucles-for" title="Permanent link">&para;</a></h3>
+<h4 id="exemple-1-calculer-une-sommation-simple">Exemple 1 : Calculer une sommation simple<a class="headerlink" href="#exemple-1-calculer-une-sommation-simple" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Itère sur les nombres de 1 à (6-1)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">somme</span> <span class="o">+=</span> <span class="n">i</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La somme des nombres de 1 à 5 est </span><span class="si">{</span><span class="n">somme</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Affiche : La somme des nombres de 1 à 5 est 15</span>
+</span></code></pre></div>
+<hr />
+<h4 id="exemple-2-iteration-avec-un-pas-negatif">Exemple 2 : Itération avec un pas négatif<a class="headerlink" href="#exemple-2-iteration-avec-un-pas-negatif" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># Compte à rebours par pas de -2</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Affiche : 10, 8, 6, 4, 2, 0</span>
+</span></code></pre></div>
+<hr />
+<h4 id="exemple-3-table-de-multiplication">Exemple 3 : Table de multiplication<a class="headerlink" href="#exemple-3-table-de-multiplication" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez un nombre pour voir sa table de multiplication : &quot;</span><span class="p">))</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>  <span class="c1"># Itère sur les nombres de 1 à (11-1)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="points-cles">Points Clés<a class="headerlink" href="#points-cles" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La fonction <code>range()</code> génère des séquences efficaces en mémoire car elle ne crée pas réellement une liste mais génère
+  les valeurs &ldquo;à la volée&rdquo;.</li>
+<li>Les paramètres optionnels permettent un contrôle précis sur le début (<code>start</code>), la fin (<code>stop</code>) et l&rsquo;incrément (
+  <code>step</code>) de la séquence.</li>
+<li>Elle simplifie considérablement les boucles comptées par rapport aux boucles manuelles avec des variables d&rsquo;itération.</li>
+</ul>
+<p>En résumé, la fonction <code>range()</code> est un outil puissant et flexible pour contrôler les boucles en Python.</p>
 <details class="note">
 <summary>Citations</summary>
 <ul>
-<li>[1] https://www.youtube.com/watch?v=IzNh3W2DY-w</li>
-<li>[2] https://arjancodes.com/blog/python-common-pitfalls-and-fixes-for-syntactic-snafus/</li>
-<li>[3] https://hackr.io/blog/common-python-mistakes</li>
-<li>[4] https://rollbar.com/blog/python-errors-and-how-to-handle-them/</li>
-<li>[5] https://docs.python-guide.org/writing/gotchas/</li>
-<li>[6] https://doc.sagemath.org/html/en/tutorial/tour_functions.html</li>
-<li>[7] https://www.reddit.com/r/learnpython/comments/pop076/error_the_function_is_not_defined/</li>
-<li>[8] https://www.educative.io/blog/common-mistakes-python-programmers-how-to-fix</li>
-<li>[9] https://www.kdnuggets.com/5-tips-for-writing-better-python-functions</li>
-<li>[10] https://stackoverflow.com/questions/29690663/def-function-syntax-error-in-python-3/29690687</li>
-<li>[11] https://stackoverflow.com/questions/1011431/common-pitfalls-in-python</li>
-<li>[12] https://www.activestate.com/blog/top-10-coding-mistakes-in-python-how-to-avoid-them/</li>
-<li>[13] https://docs.python.org/3/tutorial/errors.html</li>
-<li>[14] https://betterstack.com/community/guides/scaling-python/python-errors/</li>
-<li>[15] https://www.datacamp.com/tutorial/exception-handling-python</li>
-<li>[16] https://stackoverflow.com/questions/19971453/is-it-bad-practice-in-python-to-define-a-function-in-the-middle-of-operational-c</li>
-<li>[17] https://www.tutorialsteacher.com/python/error-types-in-python</li>
-<li>[18] https://docs.python.org/ja/3.12/library/exceptions.html</li>
-<li>[19] https://www.w3schools.com/python/python_functions.asp</li>
-<li>[20] https://www.youtube.com/watch?v=zdJEYhA2AZQ</li>
+<li>[1] https://pynative.com/python-range-function/</li>
+<li>[2] https://www.w3schools.com/python/gloss_python_for_range.asp</li>
+<li>[3] https://www.w3schools.com/python/ref_func_range.asp</li>
+<li>[4] https://sparkbyexamples.com/python/range-in-for-loop-in-python/</li>
+<li>[5] https://realpython.com/python-range/</li>
+<li>[6] https://www.freecodecamp.org/news/python-for-loop-for-i-in-range-example/</li>
+<li>[7] https://cs.stanford.edu/people/nick/py/python-range.html</li>
+<li>[8] https://mimo.org/glossary/python/range-function</li>
+<li>[9] https://stackoverflow.com/questions/71625642/python-range-and-for-loop-understanding</li>
+<li>[10] https://www.snakify.org/lessons/for_loop_range/</li>
+<li>[11] https://www.datacamp.com/tutorial/python-range-function</li>
+<li>[12] https://www.datacamp.com/tutorial/python-for-i-in-range</li>
+<li>[13] https://www.coursera.org/tutorials/python-range</li>
+<li>[14] https://www.freecodecamp.org/news/python-range-function-example/</li>
 </ul>
 </details>
 <hr />
@@ -1681,7 +1611,7 @@ pour résoudre une variété de problèmes en programmation.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-pyplot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Module pyplot">
+          <a href="../13-for/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. Boucle for">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1691,20 +1621,20 @@ pour résoudre une variété de problèmes en programmation.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                5. Module pyplot
+                13. Boucle for
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-expressions-bool%C3%A9ennes/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Expressions booléennes">
+          <a href="../15-for-pyplot/" class="md-footer__link md-footer__link--next" aria-label="Next: 15. Boucle for avec pyplot">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7. Expressions booléennes
+                15. Boucle for avec pyplot
               </div>
             </div>
             <div class="md-footer__button md-icon">

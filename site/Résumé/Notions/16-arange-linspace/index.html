@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/06-fonctions/">
+        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/16-arange-linspace/">
       
       
-        <link rel="prev" href="../05-pyplot/">
+        <link rel="prev" href="../15-for-pyplot/">
       
       
-        <link rel="next" href="../07-expressions-bool%C3%A9ennes/">
+        <link rel="next" href="../17-linspace-pyplot/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>6. Définition de fonctions - Cours de programmation en sciences</title>
+        <title>16. Les fonctions arange et linspace de numpy - Cours de programmation en sciences</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#6-definition-de-fonctions" class="md-skip">
+        <a href="#16-les-fonctions-arange-et-linspace-de-numpy" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Définition de fonctions
+              16. Les fonctions arange et linspace de numpy
             
           </span>
         </div>
@@ -872,30 +872,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    6. Définition de fonctions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../06-fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -904,146 +884,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction-aux-fonctions-en-programmation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction aux fonctions en programmation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction simple
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-avec-plusieurs-parametres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction avec plusieurs paramètres
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Définition d’une fonction avec plusieurs paramètres">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntaxe de base
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple : Calcul du volume d&rsquo;une pyramide à 4 côtés
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation-de-la-fonction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilisation de la fonction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#points-importants-a-retenir" class="md-nav__link">
-    <span class="md-ellipsis">
-      Points importants à retenir
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs courantes à éviter lors de la définition de fonctions en Python
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Erreurs courantes à éviter lors de la définition de fonctions en Python">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-syntaxe" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de syntaxe
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-portee-et-de-nommage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de portée et de nommage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-liees-aux-arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs liées aux arguments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#erreurs-de-conception" class="md-nav__link">
-    <span class="md-ellipsis">
-      Erreurs de conception
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1242,10 +1082,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../16-arange-linspace/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    16. Les fonctions arange et linspace de numpy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1254,6 +1114,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-fonction-arange-de-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      La fonction arange de NumPy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La fonction arange de NumPy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe-et-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe et Paramètres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples d&rsquo;utilisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-avec-la-fonction-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec la fonction range
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparaison avec la fonction range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similitudes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choix-entre-range-et-arange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choix entre range et arange
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-fonction-linspace-de-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      La fonction linspace de NumPy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La fonction linspace de NumPy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe-et-parametres_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe et Paramètres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-dutilisation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples d&rsquo;utilisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-avec-la-fonction-arange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec la fonction arange
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparaison avec la fonction arange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similitudes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similitudes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choix-entre-linspace-et-arange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choix entre linspace et arange
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1322,64 +1352,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-aux-fonctions-en-programmation" class="md-nav__link">
+  <a href="#la-fonction-arange-de-numpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction aux fonctions en programmation
+      La fonction arange de NumPy
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction simple
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-dune-fonction-avec-plusieurs-parametres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Définition d&rsquo;une fonction avec plusieurs paramètres
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Définition d’une fonction avec plusieurs paramètres">
+    <nav class="md-nav" aria-label="La fonction arange de NumPy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
+  <a href="#syntaxe-et-parametres" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntaxe de base
+      Syntaxe et Paramètres
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" class="md-nav__link">
+  <a href="#exemples-dutilisation" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemple : Calcul du volume d&rsquo;une pyramide à 4 côtés
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#utilisation-de-la-fonction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utilisation de la fonction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#points-importants-a-retenir" class="md-nav__link">
-    <span class="md-ellipsis">
-      Points importants à retenir
+      Exemples d&rsquo;utilisation
     </span>
   </a>
   
@@ -1391,46 +1385,112 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" class="md-nav__link">
+  <a href="#comparaison-avec-la-fonction-range" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs courantes à éviter lors de la définition de fonctions en Python
+      Comparaison avec la fonction range
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Erreurs courantes à éviter lors de la définition de fonctions en Python">
+    <nav class="md-nav" aria-label="Comparaison avec la fonction range">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#erreurs-de-syntaxe" class="md-nav__link">
+  <a href="#similitudes" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs de syntaxe
+      Similitudes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#erreurs-de-portee-et-de-nommage" class="md-nav__link">
+  <a href="#differences" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs de portée et de nommage
+      Différences
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#erreurs-liees-aux-arguments" class="md-nav__link">
+  <a href="#choix-entre-range-et-arange" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs liées aux arguments
+      Choix entre range et arange
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-fonction-linspace-de-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      La fonction linspace de NumPy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La fonction linspace de NumPy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe-et-parametres_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe et Paramètres
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#erreurs-de-conception" class="md-nav__link">
+  <a href="#exemples-dutilisation_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Erreurs de conception
+      Exemples d&rsquo;utilisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparaison-avec-la-fonction-arange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec la fonction arange
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparaison avec la fonction arange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similitudes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similitudes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choix-entre-linspace-et-arange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choix entre linspace et arange
     </span>
   </a>
   
@@ -1459,184 +1519,166 @@
   
 
 
-<h1 id="6-definition-de-fonctions">6. Définition de fonctions<a class="headerlink" href="#6-definition-de-fonctions" title="Permanent link">&para;</a></h1>
-<h2 id="introduction-aux-fonctions-en-programmation">Introduction aux fonctions en programmation<a class="headerlink" href="#introduction-aux-fonctions-en-programmation" title="Permanent link">&para;</a></h2>
-<p>Dans nos programmes précédents, nous avons déjà utilisé plusieurs fonctions sans les définir nous-mêmes.
-Par exemple, nous avons employé <code>print()</code> pour afficher du texte à l&rsquo;écran, <code>input()</code> pour demander une saisie à
-l&rsquo;utilisateur, et <code>numpy.cos()</code> (ou <code>np.cos()</code>) pour calculer le cosinus d&rsquo;un angle. Ces fonctions sont des outils 
-prédéfinis qui nous permettent d&rsquo;effectuer des tâches spécifiques sans avoir à réécrire le code à chaque fois.</p>
-<p>En programmation, les fonctions sont similaires aux fonctions mathématiques que vous connaissez déjà. Elles prennent des
-entrées (appelées arguments ou paramètres), effectuent des opérations sur ces entrées, et produisent un résultat. Par
-exemple, la fonction mathématique <span class="arithmatex">\(f(x) = x^2\)</span> prend un nombre <span class="arithmatex">\(x\)</span> en entrée et retourne son carré.</p>
-<h2 id="definition-dune-fonction-simple">Définition d&rsquo;une fonction simple<a class="headerlink" href="#definition-dune-fonction-simple" title="Permanent link">&para;</a></h2>
-<p>Voyons maintenant comment définir notre propre fonction en Python. Prenons l&rsquo;exemple d&rsquo;une fonction qui calcule l&rsquo;aire
-d&rsquo;un cercle.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">aire_cercle</span><span class="p">(</span><span class="n">rayon</span><span class="p">):</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">aire</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rayon</span> <span class="o">**</span> <span class="mi">2</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">aire</span>
+<h1 id="16-les-fonctions-arange-et-linspace-de-numpy">16. Les fonctions <code>arange</code> et <code>linspace</code> de <code>numpy</code><a class="headerlink" href="#16-les-fonctions-arange-et-linspace-de-numpy" title="Permanent link">&para;</a></h1>
+<h2 id="la-fonction-arange-de-numpy">La fonction <code>arange</code> de NumPy<a class="headerlink" href="#la-fonction-arange-de-numpy" title="Permanent link">&para;</a></h2>
+<p>La fonction <code>arange</code> de NumPy est utilisée pour créer un tableau de valeurs espacées régulièrement dans une plage
+spécifiée. Elle est similaire à la fonction intégrée <code>range</code> de Python, mais elle retourne un tableau NumPy au lieu d&rsquo;un
+objet <code>range</code> ou d&rsquo;une liste.</p>
+<h3 id="syntaxe-et-parametres">Syntaxe et Paramètres<a class="headerlink" href="#syntaxe-et-parametres" title="Permanent link">&para;</a></h3>
+<p>La syntaxe de <code>arange</code> est la suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">([</span><span class="n">start</span><span class="p">,</span> <span class="p">]</span> <span class="n">stop</span><span class="p">,</span> <span class="p">[</span><span class="n">step</span><span class="p">,</span> <span class="p">]</span> <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
-<p>Examinons les différentes parties de cette définition de fonction :</p>
-<ol type="1">
-<li>
-<p><strong>Signature de la fonction</strong> : La ligne <code>def aire_cercle(rayon):</code> est la signature de la fonction. Elle commence par
-   le mot-clé <code>def</code>, suivi du nom de la fonction et des paramètres entre parenthèses.</p>
-</li>
-<li>
-<p><strong>Nom de la fonction</strong> : <code>aire_cercle</code> est le nom que nous avons choisi pour notre fonction. Il est préférable de
-   choisir un nom descriptif qui indique clairement ce que fait la fonction.</p>
-</li>
-<li>
-<p><strong>Paramètre</strong> : <code>rayon</code> est le paramètre de notre fonction. C&rsquo;est la valeur d&rsquo;entrée sur laquelle la fonction va
-   travailler. Une fonction peut avoir plusieurs paramètres, séparés par des virgules.</p>
-</li>
-<li>
-<p><strong>Corps de la fonction et indentation</strong> : Le corps de la fonction contient les instructions qui seront exécutées
-   lorsque la fonction sera appelée. En Python, le corps de la fonction est indenté (généralement de 4 espaces) pour
-   indiquer qu&rsquo;il fait partie de la fonction.</p>
-</li>
-<li>
-<p><strong>Instruction <em>return</em></strong> : <code>return aire</code> spécifie la valeur que la fonction doit renvoyer lorsqu&rsquo;elle est appelée. 
-   Dans ce cas, elle renvoie l&rsquo;aire calculée du cercle.</p>
-</li>
-</ol>
-<p>Pour utiliser cette fonction, nous pouvons maintenant l&rsquo;appeler en lui fournissant un rayon :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">aire_cercle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;aire d&#39;un cercle de rayon 5 est : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>Cette approche nous permet de réutiliser facilement le code pour calculer l&rsquo;aire de différents cercles sans avoir à
-réécrire la formule à chaque fois.</p>
-<h2 id="definition-dune-fonction-avec-plusieurs-parametres">Définition d&rsquo;une fonction avec plusieurs paramètres<a class="headerlink" href="#definition-dune-fonction-avec-plusieurs-parametres" title="Permanent link">&para;</a></h2>
-<p>En Python, il est très courant et souvent nécessaire de définir des fonctions qui prennent plusieurs paramètres. Cela
-permet à une fonction d&rsquo;être plus flexible et de traiter plusieurs entrées à la fois. Voici comment procéder :</p>
-<h3 id="syntaxe-de-base">Syntaxe de base<a class="headerlink" href="#syntaxe-de-base" title="Permanent link">&para;</a></h3>
-<p>La syntaxe pour définir une fonction avec plusieurs paramètres est similaire à celle d&rsquo;une fonction avec un seul
-paramètre, mais nous séparons les paramètres par des virgules dans la signature de la fonction.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">nom_fonction</span><span class="p">(</span><span class="n">parametre1</span><span class="p">,</span> <span class="n">parametre2</span><span class="p">,</span> <span class="n">parametre3</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="c1"># Corps de la fonction</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># Opérations utilisant les paramètres</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">return</span> <span class="n">resultat</span>
-</span></code></pre></div>
-<h3 id="exemple-calcul-du-volume-dune-pyramide-a-4-cotes"><em>Exemple</em> : Calcul du volume d&rsquo;une pyramide à 4 côtés<a class="headerlink" href="#exemple-calcul-du-volume-dune-pyramide-a-4-cotes" title="Permanent link">&para;</a></h3>
-<p>Pour calculer le volume d&rsquo;une pyramide à 4 côtés (ou pyramide à base rectangulaire), nous avons besoin de trois 
-paramètres : la longueur de la base, la largeur de la base, et la hauteur de la pyramide. La formule pour le volume 
-est :</p>
-<p><span class="arithmatex">\(V = \frac{1}{3} \times longueur \times largeur \times hauteur\)</span>.</p>
-<p>Voici comment nous pouvons définir cette fonction en Python :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">volume_pyramide</span><span class="p">(</span><span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">hauteur</span><span class="p">):</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">volume</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">longueur</span> <span class="o">*</span> <span class="n">largeur</span> <span class="o">*</span> <span class="n">hauteur</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">return</span> <span class="n">volume</span>
-</span></code></pre></div>
-<p>Dans cet exemple :</p>
 <ul>
-<li><code>longueur</code>, <code>largeur</code>, et <code>hauteur</code> sont les trois paramètres de la fonction.</li>
-<li>La fonction utilise ces trois paramètres pour calculer le volume de la pyramide.</li>
-<li>Le résultat est renvoyé à l&rsquo;aide de l&rsquo;instruction <code>return</code>.</li>
+<li><strong>start</strong> : La valeur de départ de la plage. Si non spécifiée, elle est par défaut à 0.</li>
+<li><strong>stop</strong> : La valeur de fin de la plage (exclue).</li>
+<li><strong>step</strong> : L&rsquo;incrément entre chaque valeur. Par défaut, il est à 1.</li>
+<li><strong>dtype</strong> : Le type de données du tableau de sortie. Si non spécifié, il est déterminé automatiquement à partir des
+  autres paramètres.</li>
 </ul>
-<h3 id="utilisation-de-la-fonction">Utilisation de la fonction<a class="headerlink" href="#utilisation-de-la-fonction" title="Permanent link">&para;</a></h3>
-<p>Pour utiliser cette fonction, nous fournissons les valeurs pour chaque paramètre dans l&rsquo;ordre où ils sont définis :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">volume_pyramide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le volume d&#39;une pyramide de base 5x5 et de hauteur 10 est : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<h3 id="exemples-dutilisation">Exemples d&rsquo;utilisation<a class="headerlink" href="#exemples-dutilisation" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Exemple 1 : Créer un tableau avec des valeurs de 0 à 9</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>  <span class="c1"># Output: [0 1 2 3 4 5 6 7 8 9]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Exemple 2 : Créer un tableau avec des valeurs de 5 à 10 (exclusif)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>  <span class="c1"># Output: [5 6 7 8 9]</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Exemple 3 : Créer un tableau avec un pas personnalisé</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span>  <span class="c1"># Output: [ 5  7  9 11 13]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># Exemple 4 : Créer un tableau avec des valeurs flottantes</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">arr4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr4</span><span class="p">)</span>  <span class="c1"># Output: [1.5 2.  2.5 3.  3.5 4.  4.5 5. ]</span>
 </span></code></pre></div>
-<h3 id="points-importants-a-retenir">Points importants à retenir<a class="headerlink" href="#points-importants-a-retenir" title="Permanent link">&para;</a></h3>
-<ol type="1">
-<li>
-<p><strong>Ordre des paramètres</strong> : L&rsquo;ordre dans lequel vous définissez les paramètres est crucial. Lors de l&rsquo;appel de la
-   fonction, les arguments doivent être fournis dans le même ordre (longueur, largeur, hauteur).</p>
-</li>
-<li>
-<p><strong>Nombre de paramètres</strong> : Cette fonction a trois paramètres, ce qui est parfaitement acceptable. Cependant, si une
-   fonction nécessite de nombreux paramètres, il peut être judicieux de considérer d&rsquo;autres approches, comme
-   l&rsquo;utilisation d&rsquo;un dictionnaire pour les regrouper.</p>
-</li>
-<li>
-<p><strong>Noms des paramètres</strong> : Notez comment les noms <code>longueur</code>, <code>largeur</code>, et <code>hauteur</code> sont descriptifs et clairs, ce
-   qui rend la fonction plus facile à comprendre et à utiliser.</p>
-</li>
-<li>
-<p><strong>Flexibilité</strong> : Cette fonction peut calculer le volume de n&rsquo;importe quelle pyramide à base rectangulaire, pas
-   seulement celles à base carrée. Si la base est carrée, on peut simplement utiliser la même valeur pour la longueur et
-   la largeur.</p>
-</li>
-</ol>
-<p>En utilisant des fonctions avec plusieurs paramètres comme celle-ci, vous pouvez créer des outils puissants et flexibles
-pour résoudre une variété de problèmes en programmation.</p>
-<h2 id="erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python">Erreurs courantes à éviter lors de la définition de fonctions en Python<a class="headerlink" href="#erreurs-courantes-a-eviter-lors-de-la-definition-de-fonctions-en-python" title="Permanent link">&para;</a></h2>
-<h3 id="erreurs-de-syntaxe">Erreurs de syntaxe<a class="headerlink" href="#erreurs-de-syntaxe" title="Permanent link">&para;</a></h3>
-<ol type="1">
-<li>
-<p><strong>Oublier les deux-points</strong> : Toujours ajouter <code>:</code> à la fin de la ligne de définition de la fonction[3].</p>
-</li>
-<li>
-<p><strong>Indentation incorrecte</strong> : Le corps de la fonction doit être indenté, généralement de 4 espaces[3].</p>
-</li>
-<li>
-<p><strong>Oublier les parenthèses</strong> : Pour appeler une fonction, il faut utiliser des parenthèses, même si elle n&rsquo;a pas 
-   d&rsquo;arguments[3].</p>
-</li>
-</ol>
-<h3 id="erreurs-de-portee-et-de-nommage">Erreurs de portée et de nommage<a class="headerlink" href="#erreurs-de-portee-et-de-nommage" title="Permanent link">&para;</a></h3>
-<ol start="4" type="1">
-<li>
-<p><strong>Confusion entre variables locales et globales</strong> : Les variables définies dans une fonction sont locales par défaut.</p>
-</li>
-<li>
-<p><strong>Nommer une variable comme une fonction intégrée</strong> : Éviter d&rsquo;utiliser des noms comme <code>print</code> ou <code>input</code> qui
-   masqueraient les fonctions Python intégrées[1].</p>
-</li>
-</ol>
-<h3 id="erreurs-liees-aux-arguments">Erreurs liées aux arguments<a class="headerlink" href="#erreurs-liees-aux-arguments" title="Permanent link">&para;</a></h3>
-<ol start="6" type="1">
-<li>
-<p><strong>Inverser l&rsquo;ordre des arguments</strong> : Les arguments doivent être fournis dans le bon ordre. C&rsquo;est pourquoi il est 
-   important de bien nommer les paramètres.</p>
-</li>
-<li>
-<p><strong>Trop de paramètres</strong> : Limiter le nombre de paramètres pour maintenir la lisibilité et la simplicité de la
-   fonction[9].</p>
-</li>
-</ol>
-<h3 id="erreurs-de-conception">Erreurs de conception<a class="headerlink" href="#erreurs-de-conception" title="Permanent link">&para;</a></h3>
-<ol start="8" type="1">
-<li>
-<p><strong>Fonctions trop longues ou complexes</strong> : Diviser les fonctions trop longues en sous-fonctions plus petites et plus
-   simples[9].</p>
-</li>
-<li>
-<p><strong>Retourner des types de données incohérents</strong> : Une fonction devrait toujours retourner le même type de données,
-   quelle que soit la branche d&rsquo;exécution[14].</p>
-</li>
-<li>
-<p><strong>Ne pas gérer les exceptions</strong> : Utiliser des blocs <code>try/except</code> pour gérer les erreurs potentielles dans la
-    fonction[15].</p>
-</li>
-</ol>
-<p>En évitant ces erreurs courantes, vous pourrez écrire des fonctions Python plus robustes et maintenables.</p>
+<h2 id="comparaison-avec-la-fonction-range">Comparaison avec la fonction <code>range</code><a class="headerlink" href="#comparaison-avec-la-fonction-range" title="Permanent link">&para;</a></h2>
+<h3 id="similitudes">Similitudes<a class="headerlink" href="#similitudes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Les deux fonctions génèrent des séquences de nombres.</li>
+<li>Elles acceptent des paramètres similaires : <code>start</code>, <code>stop</code>, et <code>step</code>.</li>
+</ul>
+<h3 id="differences">Différences<a class="headerlink" href="#differences" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type de retour</strong> : <code>range</code> retourne un objet <code>range</code> (un générateur en Python 3), tandis que <code>arange</code> retourne un
+  tableau NumPy.</li>
+<li><strong>Support des flottants</strong> : <code>range</code> ne prend en charge que les entiers, alors que <code>arange</code> peut gérer des valeurs
+  flottantes.</li>
+<li><strong>Utilisation de la mémoire</strong> : <code>range</code> est plus léger car il ne stocke pas toutes les valeurs en mémoire,
+  contrairement à <code>arange</code> qui crée un tableau complet.</li>
+<li><strong>Performances</strong> : Pour les grandes séquences, les opérations vectorisées de NumPy sont généralement plus rapides,
+  mais si vous devez itérer explicitement, <code>range</code> peut être plus efficace en termes de mémoire et de vitesse[4].</li>
+</ul>
+<h3 id="choix-entre-range-et-arange">Choix entre <code>range</code> et <code>arange</code><a class="headerlink" href="#choix-entre-range-et-arange" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utilisez <code>range</code> pour des itérations simples sur des entiers ou pour des boucles où la mémoire est limitée.</li>
+<li>Utilisez <code>arange</code> lorsque vous avez besoin de travailler avec des tableaux NumPy, notamment pour des calculs
+  vectorisés ou pour des valeurs flottantes.</li>
+</ul>
 <details class="note">
 <summary>Citations</summary>
 <ul>
-<li>[1] https://www.youtube.com/watch?v=IzNh3W2DY-w</li>
-<li>[2] https://arjancodes.com/blog/python-common-pitfalls-and-fixes-for-syntactic-snafus/</li>
-<li>[3] https://hackr.io/blog/common-python-mistakes</li>
-<li>[4] https://rollbar.com/blog/python-errors-and-how-to-handle-them/</li>
-<li>[5] https://docs.python-guide.org/writing/gotchas/</li>
-<li>[6] https://doc.sagemath.org/html/en/tutorial/tour_functions.html</li>
-<li>[7] https://www.reddit.com/r/learnpython/comments/pop076/error_the_function_is_not_defined/</li>
-<li>[8] https://www.educative.io/blog/common-mistakes-python-programmers-how-to-fix</li>
-<li>[9] https://www.kdnuggets.com/5-tips-for-writing-better-python-functions</li>
-<li>[10] https://stackoverflow.com/questions/29690663/def-function-syntax-error-in-python-3/29690687</li>
-<li>[11] https://stackoverflow.com/questions/1011431/common-pitfalls-in-python</li>
-<li>[12] https://www.activestate.com/blog/top-10-coding-mistakes-in-python-how-to-avoid-them/</li>
-<li>[13] https://docs.python.org/3/tutorial/errors.html</li>
-<li>[14] https://betterstack.com/community/guides/scaling-python/python-errors/</li>
-<li>[15] https://www.datacamp.com/tutorial/exception-handling-python</li>
-<li>[16] https://stackoverflow.com/questions/19971453/is-it-bad-practice-in-python-to-define-a-function-in-the-middle-of-operational-c</li>
-<li>[17] https://www.tutorialsteacher.com/python/error-types-in-python</li>
-<li>[18] https://docs.python.org/ja/3.12/library/exceptions.html</li>
-<li>[19] https://www.w3schools.com/python/python_functions.asp</li>
-<li>[20] https://www.youtube.com/watch?v=zdJEYhA2AZQ</li>
+<li>[1] https://sparkbyexamples.com/python/numpy-arange-function/</li>
+<li>[2] https://www.reddit.com/r/learnpython/comments/3g0hiz/difference_between_range_and_arange/</li>
+<li>[3] https://www.programiz.com/python-programming/numpy/methods/arange</li>
+<li>[4] https://stackoverflow.com/questions/10698858/built-in-range-or-numpy-arange-which-is-more-efficient</li>
+<li>[5] https://numpy.org/doc/2.1/reference/generated/numpy.arange.html</li>
+<li>[6] https://pieriantraining.com/range-vs-arange-choosing-the-right-tool-for-your-python-code/</li>
+<li>[7] https://realpython.com/how-to-use-numpy-arange/</li>
+<li>[8] https://www.youtube.com/watch?v=Cs1oAnMZlWs</li>
+<li>[9] https://www.w3resource.com/numpy/array-creation/arange.php</li>
+<li>[10] https://www.youtube.com/watch?v=EgKkb1MXzTk</li>
+<li>[11] https://ioflood.com/blog/numpy-np-arange/</li>
+<li>[12] https://www.youtube.com/watch?v=Vx2iye1x7wg</li>
+<li>[13] https://www.youtube.com/watch?v=uy2FF8KSj-E</li>
+</ul>
+</details>
+<h2 id="la-fonction-linspace-de-numpy">La fonction <code>linspace</code> de NumPy<a class="headerlink" href="#la-fonction-linspace-de-numpy" title="Permanent link">&para;</a></h2>
+<p>La fonction <code>linspace</code> de NumPy est utilisée pour générer un tableau de nombres espacés régulièrement entre deux valeurs
+spécifiées. Elle est particulièrement utile lorsque vous avez besoin d&rsquo;un nombre précis de points entre deux valeurs, ce
+qui est souvent le cas pour le tracé de courbes ou la simulation numérique.</p>
+<h3 id="syntaxe-et-parametres_1">Syntaxe et Paramètres<a class="headerlink" href="#syntaxe-et-parametres_1" title="Permanent link">&para;</a></h3>
+<p>La syntaxe de <code>linspace</code> est la suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><strong>start</strong> : La valeur de départ de la plage.</li>
+<li><strong>stop</strong> : La valeur de fin de la plage.</li>
+<li><strong>num</strong> : Le nombre de valeurs à générer entre <code>start</code> et <code>stop</code>. Par défaut, il est à 50.</li>
+<li><strong>endpoint</strong> : Un flag booléen indiquant si <code>stop</code> doit être inclus dans la séquence. Par défaut, il est à <code>True</code>.</li>
+<li><strong>retstep</strong> : Un flag booléen indiquant si la fonction doit retourner le pas calculé entre les valeurs. Par défaut, il
+  est à <code>False</code>.</li>
+<li><strong>dtype</strong> : Le type de données du tableau de sortie. Si non spécifié, il est déterminé automatiquement à partir des
+  autres paramètres.</li>
+<li><strong>axis</strong> : Si <code>start</code> et <code>stop</code> sont des tableaux, cet argument spécifie sur quel axe les valeurs seront ajoutées. Par
+  défaut, il est à 0.</li>
+</ul>
+<h3 id="exemples-dutilisation_1">Exemples d&rsquo;utilisation<a class="headerlink" href="#exemples-dutilisation_1" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Exemple 1 : Créer un tableau avec 5 valeurs entre 0 et 1</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>  <span class="c1"># Output: [0.  0.25 0.5  0.75 1.  ]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Exemple 2 : Créer un tableau avec 5 valeurs entre 0 et 1, sans inclure la valeur de fin</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>  <span class="c1"># Output: [0.   0.2  0.4  0.6  0.8]</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Exemple 3 : Créer un tableau avec 5 valeurs entre 0 et 2π pour un tracé de courbe sinusoïdale</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Output: [0.         1.57079633 3.14159265 4.71238898 6.28318531]</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Output: [ 0.         1.         0.        -1.         0.        ]</span>
+</span></code></pre></div>
+<h2 id="comparaison-avec-la-fonction-arange">Comparaison avec la fonction <code>arange</code><a class="headerlink" href="#comparaison-avec-la-fonction-arange" title="Permanent link">&para;</a></h2>
+<h3 id="similitudes_1">Similitudes<a class="headerlink" href="#similitudes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Les deux fonctions génèrent des séquences de nombres.</li>
+<li>Elles acceptent des paramètres similaires pour le début et la fin de la séquence.</li>
+</ul>
+<h3 id="differences_1">Différences<a class="headerlink" href="#differences_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Nombre de valeurs vs. pas</strong> : <code>linspace</code> permet de spécifier le nombre de valeurs à générer (<code>num</code>), tandis que
+  <code>arange</code> permet de spécifier le pas entre les valeurs (<code>step</code>).</li>
+<li><strong>Inclusion de la valeur de fin</strong> : <code>linspace</code> inclut par défaut la valeur de fin (<code>endpoint=True</code>), alors que
+  <code>arange</code> exclut la valeur de fin.</li>
+<li><strong>Précision pour les flottants</strong> : <code>linspace</code> est plus précis pour les séquences de nombres flottants car il garantit
+  que les valeurs de début et de fin sont incluses, ce qui réduit les erreurs de précision liées aux flottants.</li>
+<li><strong>Performances</strong> : <code>arange</code> est généralement plus rapide car il utilise une progression arithmétique simple, tandis
+  que <code>linspace</code> effectue des calculs supplémentaires pour garantir l&rsquo;inclusion des valeurs de début et de fin.</li>
+</ul>
+<h3 id="choix-entre-linspace-et-arange">Choix entre <code>linspace</code> et <code>arange</code><a class="headerlink" href="#choix-entre-linspace-et-arange" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utilisez <code>linspace</code> lorsque vous avez besoin d&rsquo;un nombre précis de points entre deux valeurs, comme pour le tracé de
+  courbes ou la simulation numérique.</li>
+<li>Utilisez <code>arange</code> lorsque vous avez besoin d&rsquo;un pas spécifique entre les valeurs, comme pour l&rsquo;itération ou l&rsquo;
+  indexation.</li>
+</ul>
+<details class="note">
+<summary>Citations</summary>
+<ul>
+<li>[1] https://fritz.ai/exploring-numpys-linspace-function/</li>
+<li>[2] https://www.codecademy.com/resources/docs/numpy/built-in-functions/linspace</li>
+<li>[3] https://www.statology.org/numpy-linspace-vs-arange/</li>
+<li>[4] https://www.boardinfinity.com/blog/python-numpy-linspace/</li>
+<li>[5] https://www.h2kinfosys.com/blog/create-a-range-of-numbers-as-an-array/</li>
+<li>[6] https://www.programiz.com/python-programming/numpy/methods/linspace</li>
+<li>[7] https://stackoverflow.com/questions/62106028/what-is-the-difference-between-np-linspace-and-np-arange</li>
+<li>[8] https://realpython.com/np-linspace-numpy/</li>
+<li>[9] https://note.nkmk.me/en/python-numpy-arange-linspace/</li>
+<li>[10] https://www.thepythoncodingstack.com/p/difference-between-numpy-arange-and-linspace</li>
+<li>[11] https://www.w3resource.com/numpy/array-creation/linspace.php</li>
+<li>[12] https://docs.vultr.com/python/third-party/numpy/linspace</li>
+<li>[13] https://numpy.org/doc/2.1/reference/generated/numpy.linspace.html</li>
+<li>[14] https://www.sharpsightlabs.com/blog/numpy-linspace/</li>
+<li>[15] https://www.mathworks.com/help/matlab/ref/double.linspace.html</li>
+<li>[16] https://www.youtube.com/watch?v=dRnUT5vVziU</li>
+<li>[17] https://www.youtube.com/watch?v=9bHtS2tTLjI</li>
+<li>[18] https://www.datacamp.com/tutorial/how-to-use-the-numpy-linspace-function</li>
+<li>[19] https://ioflood.com/blog/np-linspace/</li>
+<li>[20] https://python.plainenglish.io/title-numpy-linspace-vs-arange-which-to-choose-for-evenly-spaced-sequences-7ffb36ad98ca</li>
 </ul>
 </details>
 <hr />
@@ -1681,7 +1723,7 @@ pour résoudre une variété de problèmes en programmation.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-pyplot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Module pyplot">
+          <a href="../15-for-pyplot/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 15. Boucle for avec pyplot">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1691,20 +1733,20 @@ pour résoudre une variété de problèmes en programmation.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                5. Module pyplot
+                15. Boucle for avec pyplot
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-expressions-bool%C3%A9ennes/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Expressions booléennes">
+          <a href="../17-linspace-pyplot/" class="md-footer__link md-footer__link--next" aria-label="Next: 17. Fonction linpspace avec pyplot">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7. Expressions booléennes
+                17. Fonction linpspace avec pyplot
               </div>
             </div>
             <div class="md-footer__button md-icon">

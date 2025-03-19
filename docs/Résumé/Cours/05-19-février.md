@@ -7,7 +7,6 @@
    - `if`
    - `if...else`
    - `if...elif...else`
-3. `match`
 
 ## Livre
 

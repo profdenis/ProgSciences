@@ -1,0 +1,1825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/11-while/">
+      
+      
+        <link rel="prev" href="../10-indentation/">
+      
+      
+        <link rel="next" href="../12-while-pyplot/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>11. Boucles while - Cours de programmation en sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-boucles-while" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-header__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours de programmation en sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Boucles while
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/profdenis/ProgSciences" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    profdenis/ProgSciences
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Cours de programmation en sciences
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-tabs__link">
+          
+  
+  Algorithmes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Cours/01-22-janvier/" class="md-tabs__link">
+          
+  
+  Résumé
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-nav__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cours de programmation en sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/profdenis/ProgSciences" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    profdenis/ProgSciences
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours de programmation en sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algorithmes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux algorithmes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/02_Conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algorithmes/03_Boucles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les boucles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Résumé
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Résumé
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/01-22-janvier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Cours du 22 janvier 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/02-29-janvier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Cours du 29 janvier 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/03-05-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Cours du 5 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/04-12-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cours du 12 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/05-19-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Cours du 19 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/06-26-f%C3%A9vrier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Cours du 26 février 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cours/08-19-mars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Cours du 19 mars 2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Notions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Notions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-affichage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Affichage sur la sortie standard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entr%C3%A9es/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Lire des données sur l&rsquo;entrée standard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Importation de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Module numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-pyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Module pyplot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Définition de fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expressions-bool%C3%A9ennes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expressions booléennes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-conditionnelles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Conditionnelles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-match/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Correspondance de cas match-case
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-indentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Importance de l&rsquo;indentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. Boucles while
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. Boucles while
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-aux-boucles-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction aux Boucles while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction aux Boucles while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparaison-avec-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-fondamentale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Fondamentale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#necessite-de-mettre-fin-a-la-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nécessité de Mettre Fin à la Boucle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-des-entrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation des entrées
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calcul-de-la-sommation-sum_i1n-frac1i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calcul de la Sommation \(\sum_{i=1}^{n} \frac{1}{i}\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calcul de la Sommation \(\sum_{i=1}^{n} \frac{1}{i}\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-python-pour-la-sommation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction Python pour la Sommation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calcul-de-la-racine-carree-avec-une-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calcul de la Racine Carrée avec une Boucle while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calcul de la Racine Carrée avec une Boucle while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problème
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonction-python-pour-le-calcul-de-la-racine-carree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction Python pour le Calcul de la Racine Carrée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-while-pyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Boucle while avec pyplot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-for/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Boucle for
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-range/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. La fonction range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-for-pyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Boucle for avec pyplot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-arange-linspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16. Les fonctions arange et linspace de numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-linspace-pyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17. Fonction linpspace avec pyplot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-aux-boucles-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction aux Boucles while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction aux Boucles while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparaison-avec-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparaison avec if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-fondamentale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Fondamentale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#necessite-de-mettre-fin-a-la-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nécessité de Mettre Fin à la Boucle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-des-entrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation des entrées
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calcul-de-la-sommation-sum_i1n-frac1i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calcul de la Sommation \(\sum_{i=1}^{n} \frac{1}{i}\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calcul de la Sommation \(\sum_{i=1}^{n} \frac{1}{i}\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonction-python-pour-la-sommation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction Python pour la Sommation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calcul-de-la-racine-carree-avec-une-boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calcul de la Racine Carrée avec une Boucle while
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calcul de la Racine Carrée avec une Boucle while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problème
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonction-python-pour-le-calcul-de-la-racine-carree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonction Python pour le Calcul de la Racine Carrée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="11-boucles-while">11. Boucles <code>while</code><a class="headerlink" href="#11-boucles-while" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-aux-boucles-while">Introduction aux Boucles <code>while</code><a class="headerlink" href="#introduction-aux-boucles-while" title="Permanent link">&para;</a></h2>
+<p>Les boucles <code>while</code> sont un élément fondamental en programmation Python, permettant d&rsquo;exécuter un bloc de code tant qu&rsquo;
+une condition spécifique est remplie. Pour comprendre leur fonctionnement, il est utile de les comparer aux instructions
+conditionnelles <code>if</code>.</p>
+<h3 id="comparaison-avec-if">Comparaison avec <code>if</code><a class="headerlink" href="#comparaison-avec-if" title="Permanent link">&para;</a></h3>
+<p>Considérons deux exemples simples :</p>
+<ol type="1">
+<li><strong>Instruction <code>if</code></strong> :
+   <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est inférieur à 10&quot;</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ol>
+<p>Dans cet exemple, le message sera affiché une seule fois si <code>x</code> est inférieur à 10.</p>
+<ol start="2" type="1">
+<li><strong>Boucle <code>while</code></strong> :
+   <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est inférieur à 10&quot;</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div></li>
+</ol>
+<p>Ici, le message sera affiché à chaque itération tant que <code>x</code> est inférieur à 10. La valeur de <code>x</code> est incrémentée à
+   chaque itération pour éviter une boucle infinie.</p>
+<h3 id="difference-fondamentale">Différence Fondamentale<a class="headerlink" href="#difference-fondamentale" title="Permanent link">&para;</a></h3>
+<p>La différence clé entre <code>if</code> et <code>while</code> est la répétition :</p>
+<ul>
+<li><strong><code>if</code></strong> vérifie une condition et exécute le code associé une seule fois si la condition est vraie.</li>
+<li><strong><code>while</code></strong> continue d&rsquo;exécuter le code tant que la condition est vraie.</li>
+</ul>
+<h3 id="necessite-de-mettre-fin-a-la-boucle">Nécessité de Mettre Fin à la Boucle<a class="headerlink" href="#necessite-de-mettre-fin-a-la-boucle" title="Permanent link">&para;</a></h3>
+<p>Pour éviter une <strong>boucle infinie</strong>, il est crucial de modifier la condition à l&rsquo;intérieur de la boucle pour qu&rsquo;elle
+devienne fausse après un certain nombre d&rsquo;itérations. Dans l&rsquo;exemple ci-dessus, <code>x += 1</code> assure que la condition
+<code>x &lt; 10</code> deviendra fausse après plusieurs itérations.</p>
+<p>Si la condition n&rsquo;est jamais modifiée, comme dans l&rsquo;exemple suivant, la boucle continuera indéfiniment :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est inférieur à 10&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Cela entraînera une boucle infinie, car <code>x</code> reste toujours inférieur à 10.</p>
+<p>En résumé, les boucles <code>while</code> sont puissantes pour répéter des actions, mais elles nécessitent une gestion soigneuse de
+la condition pour éviter les boucles infinies.</p>
+<h2 id="validation-des-entrees">Validation des entrées<a class="headerlink" href="#validation-des-entrees" title="Permanent link">&para;</a></h2>
+<p>Voici un exemple de fonction Python qui utilise une boucle <code>while</code> pour demander à l&rsquo;utilisateur d&rsquo;entrer un nombre réel
+supérieur à 0.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">demander_nombre_positif</span><span class="p">():</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    Demande à l&#39;utilisateur d&#39;entrer un nombre réel supérieur à 0.</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">    Retourne le nombre une fois que la condition est satisfaite.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez entrer un nombre réel supérieur à 0 : &quot;</span><span class="p">))</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="c1"># Boucle tant que le nombre n&#39;est pas supérieur à 0</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">while</span> <span class="n">nombre</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre doit être supérieur à 0.&quot;</span><span class="p">)</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">nombre</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez entrer un nombre réel supérieur à 0 : &quot;</span><span class="p">))</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">return</span> <span class="n">nombre</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># Exemple d&#39;utilisation</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">nombre_positif</span> <span class="o">=</span> <span class="n">demander_nombre_positif</span><span class="p">()</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le nombre positif saisi est : </span><span class="si">{</span><span class="n">nombre_positif</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Dans cette fonction, la boucle <code>while</code> continue de demander un nombre à l&rsquo;utilisateur tant que celui-ci n&rsquo;est pas
+supérieur à 0. Une fois que la condition est satisfaite, la fonction retourne le nombre.</p>
+<details class="info">
+<summary>Exceptions (facultatif)</summary>
+<p>Si l&rsquo;utilisateur n&rsquo;entre pas un nombre valide (par exemple, une chaîne de caractères ou un symbole), la fonction
+  précédente générera une erreur de type <code>ValueError</code>. Cela se produit car la fonction <code>float()</code> tente de convertir la
+  saisie utilisateur en un nombre flottant, ce qui échoue si la saisie n&rsquo;est pas un nombre.</p>
+<p>Pour résoudre ce problème, il est possible d&rsquo;utiliser une gestion d&rsquo;exceptions (<code>try-except</code>) pour capturer les
+  erreurs de conversion et redemander à l&rsquo;utilisateur de saisir un nombre valide. Voici une variation de la fonction
+  précédente qui inclut cette gestion :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">demander_nombre_positif</span><span class="p">():</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="sd">    Demande à l&#39;utilisateur d&#39;entrer un nombre réel supérieur à 0.</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="sd">    Retourne le nombre une fois que la condition est satisfaite.</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">nombre_valide</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="k">while</span> <span class="ow">not</span> <span class="n">nombre_valide</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="n">nombre</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez entrer un nombre réel supérieur à 0 : &quot;</span><span class="p">))</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            <span class="k">if</span> <span class="n">nombre</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                <span class="n">nombre_valide</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre doit être supérieur à 0.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La saisie n&#39;est pas un nombre valide. Veuillez réessayer.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="k">return</span> <span class="n">nombre</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="c1"># Exemple d&#39;utilisation</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">nombre_positif</span> <span class="o">=</span> <span class="n">demander_nombre_positif</span><span class="p">()</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le nombre positif saisi est : </span><span class="si">{</span><span class="n">nombre_positif</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Dans cette version, la boucle <code>while</code> continue indéfiniment jusqu&rsquo;à ce que l&rsquo;utilisateur entre un nombre réel supérieur
+  à 0. Si la conversion en <code>float</code> échoue (ce qui déclenche une exception <code>ValueError</code>), un message d&rsquo;erreur est affiché
+  et l&rsquo;utilisateur est invité à réessayer. Si le nombre est valide mais inférieur ou égal à 0, un message est également
+  affiché pour demander un nombre supérieur à 0.</p>
+<p>Dans cette version, la variable <code>nombre_valide</code> agit comme <em>sentinelle</em>. La boucle continue tant que 
+  <code>nombre_valide</code> est <code>False</code>. Dès que le nombre saisi est valide et supérieur à 0, <code>nombre_valide</code> est défini à 
+  <code>True</code>, ce qui met fin à la boucle.</p>
+</details>
+<h2 id="calcul-de-la-sommation-sum_i1n-frac1i">Calcul de la Sommation <span class="arithmatex">\(\sum_{i=1}^{n} \frac{1}{i}\)</span><a class="headerlink" href="#calcul-de-la-sommation-sum_i1n-frac1i" title="Permanent link">&para;</a></h2>
+<p>La sommation <span class="arithmatex">\(\sum_{i=1}^{n} \frac{1}{i}\)</span> est une série bien connue en mathématiques, souvent utilisée pour
+illustrer les séries divergentes. Ici, nous allons écrire une fonction Python pour calculer cette sommation en utilisant
+une boucle <code>while</code>.</p>
+<h3 id="fonction-python-pour-la-sommation">Fonction Python pour la Sommation<a class="headerlink" href="#fonction-python-pour-la-sommation" title="Permanent link">&para;</a></h3>
+<p>Voici une fonction Python qui calcule la sommation <span class="arithmatex">\(\sum_{i=1}^{n} \frac{1}{i}\)</span> en utilisant une boucle <code>while</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">sommation_inverse_while</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    Calcule la sommation \sum_{i=1}^{n} 1/i en utilisant une boucle while.</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    Arguments:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    n -- entier positif représentant la limite supérieure de la sommation.</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">    Retourne:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="sd">    La valeur de la sommation.</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">somme</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">i</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">return</span> <span class="n">somme</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="c1"># Exemple d&#39;utilisation</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">sommation_inverse_while</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La sommation est : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="explications">Explications<a class="headerlink" href="#explications" title="Permanent link">&para;</a></h3>
+<ol type="1">
+<li><strong>Définition de la Fonction</strong> : La fonction <code>sommation_inverse_while(n)</code> prend un entier <code>n</code> comme argument et
+   calcule la sommation des inverses de tous les entiers de 1 à <code>n</code>.</li>
+<li><strong>Vérification de <code>n</code></strong> : La fonction vérifie si n est inférieur à 1. Si c&rsquo;est le cas, elle retourne une valeur
+   de 0. On pourrait lancer une erreur à la place avec <code>raise</code> (à voir plus tard).</li>
+<li><strong>Calcul de la Sommation</strong> : La sommation est calculée en utilisant une boucle <code>while</code> qui itère sur tous les entiers
+   de 1 à <code>n</code> (inclus). À chaque itération, l&rsquo;inverse de l&rsquo;entier courant est ajouté à la somme.</li>
+<li><strong>Retour de la Sommation</strong> : Une fois que tous les termes ont été ajoutés, la fonction retourne la valeur de la
+   sommation.</li>
+<li><strong>Exemple d&rsquo;Utilisation</strong> : Dans l&rsquo;exemple, nous calculons la sommation pour <code>n = 10</code>, ce qui donne une valeur
+   approximative de <code>2.9289682539682538</code>.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Nous verrons dans le prochain chapitre une autre solution avec une boucle <code>for</code>.</p>
+</div>
+<h2 id="calcul-de-la-racine-carree-avec-une-boucle-while">Calcul de la Racine Carrée avec une Boucle <code>while</code><a class="headerlink" href="#calcul-de-la-racine-carree-avec-une-boucle-while" title="Permanent link">&para;</a></h2>
+<p>Le calcul de la racine carrée d&rsquo;un nombre peut être abordé de plusieurs manières, notamment en utilisant des méthodes
+numériques comme la méthode de Newton-Raphson ou une simple itération pour approximer la racine carrée. Ici, nous allons
+utiliser une méthode simple basée sur l&rsquo;itération pour trouver une approximation de la racine carrée d&rsquo;un nombre.</p>
+<h3 id="probleme">Problème<a class="headerlink" href="#probleme" title="Permanent link">&para;</a></h3>
+<p>Le problème consiste à trouver un nombre <code>x</code> tel que <code>x * x</code> soit égal à un nombre donné <code>n</code>. Cependant, pour des
+nombres non parfaits, il n&rsquo;existe pas de solution exacte en termes de nombres rationnels. Nous devons donc nous
+contenter d&rsquo;une approximation.</p>
+<h3 id="fonction-python-pour-le-calcul-de-la-racine-carree">Fonction Python pour le Calcul de la Racine Carrée<a class="headerlink" href="#fonction-python-pour-le-calcul-de-la-racine-carree" title="Permanent link">&para;</a></h3>
+<p>Voici une fonction Python qui utilise une boucle <code>while</code> pour approximer la racine carrée d&rsquo;un nombre en utilisant une
+méthode simple d&rsquo;itération.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">racine_carree</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">):</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    Approxime la racine carrée d&#39;un nombre en utilisant une méthode d&#39;itération.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">    Arguments:</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">    n -- nombre pour lequel calculer la racine carrée.</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">    precision -- précision souhaitée pour l&#39;approximation (par défaut : 0.00001).</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">    Retourne:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">    L&#39;approximation de la racine carrée.</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;La racine carrée d&#39;un nombre négatif n&#39;est pas définie en nombres réels.&quot;</span><span class="p">)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="k">return</span> <span class="n">n</span>  <span class="c1"># Cas particuliers</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="c1"># Initialisation de la valeur de départ</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">x</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">nouvelle_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Pour garantir au moins une itération</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    <span class="c1"># Boucle d&#39;itération</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">nouvelle_x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">precision</span><span class="p">:</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">nouvelle_x</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="n">nouvelle_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">n</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="k">return</span> <span class="n">nouvelle_x</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="c1"># Exemple d&#39;utilisation</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">racine_carree</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La racine carrée de 9 est approximativement : </span><span class="si">{</span><span class="n">resultat</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="explications_1">Explications<a class="headerlink" href="#explications_1" title="Permanent link">&para;</a></h3>
+<ol type="1">
+<li>
+<p><strong>Définition de la Fonction</strong> : La fonction <code>racine_carree(n, precision)</code> prend deux arguments : le nombre <code>n</code> pour
+   lequel calculer la racine carrée et la précision souhaitée pour l&rsquo;approximation.</p>
+</li>
+<li>
+<p><strong>Vérification des Cas Particuliers</strong> : Si <code>n</code> est négatif, la fonction lève une exception car la racine carrée d&rsquo;un
+   nombre négatif n&rsquo;est pas définie en nombres réels. Si <code>n</code> est 0 ou 1, la fonction retourne directement <code>n</code>, car ce
+   sont des cas simples.</p>
+</li>
+<li>
+<p><strong>Initialisation des Valeurs</strong> : La valeur initiale <code>x</code> est fixée à <code>n / 2.0</code>, ce qui est une estimation raisonnable
+   pour commencer l&rsquo;itération. Pour garantir au moins une itération, <code>nouvelle_x</code> est initialisée à <code>x + 1</code>.</p>
+</li>
+<li>
+<p><strong>Boucle d&rsquo;Itération</strong> : La boucle <code>while</code> continue tant que la différence absolue entre <code>x</code> et <code>nouvelle_x</code> est
+   supérieure ou égale à la précision souhaitée. Cela signifie que l&rsquo;itération se poursuit jusqu&rsquo;à ce que les
+   approximations successives soient suffisamment proches.</p>
+</li>
+<li>
+<p><strong>Calcul de la Nouvelle Approximation</strong> : À chaque itération, la valeur de <code>x</code> est mise à jour avec la valeur
+   précédente de <code>nouvelle_x</code>. Ensuite, une nouvelle approximation <code>nouvelle_x</code> est calculée en utilisant la formule
+   <code>(x + n / x) / 2.0</code>, qui est une simplification de la méthode de Newton-Raphson pour la racine carrée.</p>
+</li>
+<li>
+<p><strong>Retour de la Racine Carrée</strong> : Une fois que la condition de précision est satisfaite, la fonction retourne la
+   dernière valeur de <code>nouvelle_x</code>, qui est l&rsquo;approximation finale de la racine carrée.</p>
+</li>
+</ol>
+<p>Cette méthode est efficace pour trouver une approximation précise de la racine carrée d&rsquo;un nombre en utilisant une
+boucle <code>while</code> avec une condition claire et concise.</p>
+<hr />
+<details class="info">
+<summary>Utilisation de l&rsquo;IA</summary>
+<p>Page rédigée en partie avec l&rsquo;aide d&rsquo;un assistant IA, principalement à l&rsquo;aide de Perplexity AI, avec le <em>LLM</em>
+  <strong>Claude 3.5 Sonnet</strong>. L&rsquo;IA a été utilisée pour générer des explications, des exemples et/ou des suggestions de
+  structure. Toutes les informations ont été vérifiées, éditées et complétées par l&rsquo;auteur.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-indentation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Importance de l&amp;rsquo;indentation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Importance de l&rsquo;indentation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-while-pyplot/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. Boucle while avec pyplot">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. Boucle while avec pyplot
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

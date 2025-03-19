@@ -8,22 +8,26 @@
       
       
       
+        <link rel="canonical" href="https://profdenis.github.io/ProgSciences/R%C3%A9sum%C3%A9/Notions/17-linspace-pyplot/">
+      
+      
+        <link rel="prev" href="../16-arange-linspace/">
       
       
       
-      <link rel="icon" href="/ProgSciences/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.50">
     
     
       
-        <title>Cours de programmation en sciences</title>
+        <title>17. Fonction linpspace avec pyplot - Cours de programmation en sciences</title>
       
     
     
-      <link rel="stylesheet" href="/ProgSciences/assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
       
         
-        <link rel="stylesheet" href="/ProgSciences/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,13 +46,13 @@
       
     
     
-      <link rel="stylesheet" href="/ProgSciences/style.css">
+      <link rel="stylesheet" href="../../../style.css">
     
-      <link rel="stylesheet" href="/ProgSciences/assets/mkdocs_puml/puml.css">
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/puml.css">
     
-      <link rel="stylesheet" href="/ProgSciences/assets/mkdocs_puml/interaction.css">
+      <link rel="stylesheet" href="../../../assets/mkdocs_puml/interaction.css">
     
-    <script>__md_scope=new URL("/ProgSciences/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#17-fonction-linpspace-avec-pyplot" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/ProgSciences/." title="Cours de programmation en sciences" class="md-header__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-header__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              17. Fonction linpspace avec pyplot
             
           </span>
         </div>
@@ -218,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/ProgSciences/." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -237,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/ProgSciences/Algorithmes/01_Premiers_Algorithmes/" class="md-tabs__link">
+        <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-tabs__link">
           
   
   Algorithmes
@@ -251,17 +260,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/01-22-janvier/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Cours/01-22-janvier/" class="md-tabs__link">
           
   
   Résumé
@@ -303,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/ProgSciences/." title="Cours de programmation en sciences" class="md-nav__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
+    <a href="../../.." title="Cours de programmation en sciences" class="md-nav__button md-logo" aria-label="Cours de programmation en sciences" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -333,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/Algorithmes/01_Premiers_Algorithmes/" class="md-nav__link">
+      <a href="../../../Algorithmes/01_Premiers_Algorithmes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -416,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/Algorithmes/02_Conditionnelles/" class="md-nav__link">
+      <a href="../../../Algorithmes/02_Conditionnelles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/Algorithmes/03_Boucles/" class="md-nav__link">
+      <a href="../../../Algorithmes/03_Boucles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,27 +475,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -493,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Résumé
@@ -512,10 +528,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -524,7 +543,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -549,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/01-22-janvier/" class="md-nav__link">
+      <a href="../../Cours/01-22-janvier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/02-29-janvier/" class="md-nav__link">
+      <a href="../../Cours/02-29-janvier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/03-05-f%C3%A9vrier/" class="md-nav__link">
+      <a href="../../Cours/03-05-f%C3%A9vrier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/04-12-f%C3%A9vrier/" class="md-nav__link">
+      <a href="../../Cours/04-12-f%C3%A9vrier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -633,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/05-19-f%C3%A9vrier/" class="md-nav__link">
+      <a href="../../Cours/05-19-f%C3%A9vrier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/06-26-f%C3%A9vrier/" class="md-nav__link">
+      <a href="../../Cours/06-26-f%C3%A9vrier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Cours/08-19-mars/" class="md-nav__link">
+      <a href="../../Cours/08-19-mars/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -701,27 +720,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -732,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Notions
@@ -746,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/01-affichage/" class="md-nav__link">
+      <a href="../01-affichage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -767,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/02-entr%C3%A9es/" class="md-nav__link">
+      <a href="../02-entr%C3%A9es/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/03-random/" class="md-nav__link">
+      <a href="../03-random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -809,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/04-numpy/" class="md-nav__link">
+      <a href="../04-numpy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -830,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/05-pyplot/" class="md-nav__link">
+      <a href="../05-pyplot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -851,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/06-fonctions/" class="md-nav__link">
+      <a href="../06-fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -872,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/07-expressions-bool%C3%A9ennes/" class="md-nav__link">
+      <a href="../07-expressions-bool%C3%A9ennes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -893,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/08-conditionnelles/" class="md-nav__link">
+      <a href="../08-conditionnelles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -914,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/09-match/" class="md-nav__link">
+      <a href="../09-match/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -935,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/10-indentation/" class="md-nav__link">
+      <a href="../10-indentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/11-while/" class="md-nav__link">
+      <a href="../11-while/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -977,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/12-while-pyplot/" class="md-nav__link">
+      <a href="../12-while-pyplot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -998,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/13-for/" class="md-nav__link">
+      <a href="../13-for/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1019,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/14-range/" class="md-nav__link">
+      <a href="../14-range/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/15-for-pyplot/" class="md-nav__link">
+      <a href="../15-for-pyplot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1061,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/16-arange-linspace/" class="md-nav__link">
+      <a href="../16-arange-linspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,10 +1101,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/ProgSciences/R%C3%A9sum%C3%A9/Notions/17-linspace-pyplot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    17. Fonction linpspace avec pyplot
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1091,6 +1133,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explications-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications du code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explications du code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du programme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résultat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1128,6 +1223,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explications-du-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explications du code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explications du code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-programme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du programme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résultat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1139,8 +1277,129 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="17-fonction-linpspace-avec-pyplot">17. Fonction <code>linpspace</code> avec <code>pyplot</code><a class="headerlink" href="#17-fonction-linpspace-avec-pyplot" title="Permanent link">&para;</a></h1>
+<p>Voici un autre exemple de figure comprenant des points calculés à partir d&rsquo;une fonction, mais dans ce cas-ci en
+utilisant la fonction <code>linspace</code> de <code>numpy</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Initialisation de la figure</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ob&quot;</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Ajouter des labels et un titre</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;y = sin x&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Afficher la grille et la figure</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="linspace_pyplot.png" src="../../../images/linspace_pyplot.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Exercice</p>
+<ul>
+<li>Modifiez le format de <code>"ob"</code> vers <code>"-b"</code> ou <code>".--b"</code>. </li>
+<li>Diminuez le nombre de points de 20 à 10 ou à 5, ou augmentez-le à 30 our 40.</li>
+<li>Serait-ce préférable d&rsquo;utiliser <code>21</code> à la place de <code>20</code> pour le nombre de points ? Ou <code>31</code> à la place de <code>30</code> ?</li>
+<li>Pourquoi n&rsquo;est-il pas nécessaire de faire une boucle pour dessiner les points dans cet exemple ?</li>
+</ul>
+</div>
+<h2 id="explications-du-code">Explications du code<a class="headerlink" href="#explications-du-code" title="Permanent link">&para;</a></h2>
+<p>Ce programme Python utilise les bibliothèques <strong>NumPy</strong> et <strong>Matplotlib</strong> pour tracer une courbe représentant la
+fonction <span class="arithmatex">\(y = \sin(x)\)</span> avec des points espacés régulièrement entre <span class="arithmatex">\(0\)</span> et <span class="arithmatex">\(2\pi\)</span>.</p>
+<h3 id="etapes-du-programme">Étapes du programme<a class="headerlink" href="#etapes-du-programme" title="Permanent link">&para;</a></h3>
+<ol type="1">
+<li>
+<p><strong>Importation des bibliothèques</strong> :</p>
+<ul>
+<li><code>numpy</code> est utilisé pour les calculs numériques, notamment pour générer des valeurs de <span class="arithmatex">\(x\)</span> et
+  calculer <span class="arithmatex">\(y = \sin(x)\)</span>.</li>
+<li><code>matplotlib.pyplot</code> est utilisé pour créer et personnaliser des graphiques.</li>
+</ul>
+</li>
+<li>
+<p><strong>Initialisation de la figure</strong> :</p>
+<ul>
+<li><code>plt.figure(figsize=(8, 2))</code> crée une figure avec une taille personnalisée (8 unités de largeur et 2 unités de
+  hauteur).</li>
+</ul>
+</li>
+<li>
+<p><strong>Création des données</strong> :</p>
+<ul>
+<li><code>np.linspace(0, 2 * np.pi, 20)</code> génère un tableau contenant 20 valeurs uniformément espacées entre <span class="arithmatex">\(0\)</span>
+  et <span class="arithmatex">\(2\pi\)</span>. Ces valeurs représentent les coordonnées <span class="arithmatex">\(x\)</span>.</li>
+<li><code>np.sin(x)</code> calcule les valeurs correspondantes de <span class="arithmatex">\(y = \sin(x)\)</span> pour chaque valeur de <span class="arithmatex">\(x\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tracé des points</strong> :</p>
+<ul>
+<li><code>plt.plot(x, y, "ob")</code> trace les points sur le graphique. Le format <code>"ob"</code> signifie :<ul>
+<li><code>"o"</code> : les points sont représentés par des cercles.</li>
+<li><code>"b"</code> : la couleur des cercles est bleue.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Ajout du titre et personnalisation des axes</strong> :</p>
+<ul>
+<li><code>plt.title("y = sin x", fontsize=14)</code> ajoute un titre au graphique avec une taille de police de 14.</li>
+<li><code>plt.xlim(-1, np.ceil(2 * np.pi))</code> définit les limites de l&rsquo;axe <span class="arithmatex">\(x\)</span> entre <span class="arithmatex">\(-1\)</span> et la valeur arrondie à
+  l&rsquo;entier supérieur de <span class="arithmatex">\(2\pi\)</span>.</li>
+<li><code>plt.ylim(-1.1, 1.1)</code> définit les limites de l&rsquo;axe <span class="arithmatex">\(y\)</span> entre <span class="arithmatex">\(-1.1\)</span> et <span class="arithmatex">\(1.1\)</span>, ce qui permet d&rsquo;inclure tous
+  les points.</li>
+</ul>
+</li>
+<li>
+<p><strong>Affichage d&rsquo;une grille</strong> :</p>
+<ul>
+<li><code>plt.grid(True)</code> ajoute une grille au graphique pour faciliter la lecture des valeurs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Affichage du graphique</strong> :</p>
+<ul>
+<li><code>plt.show()</code> affiche le graphique final.</li>
+</ul>
+</li>
+</ol>
+<h3 id="resultat">Résultat<a class="headerlink" href="#resultat" title="Permanent link">&para;</a></h3>
+<p>Le programme génère un graphique où :</p>
+<ul>
+<li>Les points bleus représentent les valeurs calculées de <span class="arithmatex">\(y = \sin(x)\)</span> pour 20 positions de <span class="arithmatex">\(x\)</span> entre <span class="arithmatex">\(0\)</span>
+  et <span class="arithmatex">\(2\pi\)</span>.</li>
+<li>Une grille est affichée pour améliorer la lisibilité.</li>
+<li>Les axes <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> sont ajustés pour inclure tous les points.</li>
+</ul>
+<p>L&rsquo;image attachée montre le résultat attendu : un tracé discret en forme d&rsquo;onde sinusoïdale avec des points bleus sur un
+fond quadrillé.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1158,6 +1417,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../16-arange-linspace/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 16. Les fonctions arange et linspace de numpy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                16. Les fonctions arange et linspace de numpy
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1182,22 +1463,22 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/ProgSciences/", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight"], "search": "/ProgSciences/assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/ProgSciences/assets/javascripts/bundle.60a45f97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
       
-        <script src="/ProgSciences/javascripts/config.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="/ProgSciences/assets/mkdocs_puml/puml.js"></script>
+        <script src="../../../assets/mkdocs_puml/puml.js"></script>
       
         <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
       
-        <script src="/ProgSciences/assets/mkdocs_puml/interaction.js"></script>
+        <script src="../../../assets/mkdocs_puml/interaction.js"></script>
       
     
   </body>
