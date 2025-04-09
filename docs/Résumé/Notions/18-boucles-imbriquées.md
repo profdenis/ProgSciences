@@ -187,3 +187,11 @@ en arrêtant le processus lorsqu'un nombre non positif est entré[1][2].
      - [8] https://reeborg.ca/docs/fr/variables/arguments1b.html
      - [9] https://www.docstring.fr/formations/faq/ligne-de-commande/comment-lire-lentree-de-lutilisateur-en-python/
    
+
+
+-------
+
+??? info "Utilisation de l'IA"
+      Page rédigée en partie avec l'aide d'un assistant IA, principalement à l'aide de Perplexity AI. L'IA a été 
+      utilisée pour générer des explications, des exemples et/ou des suggestions de structure. Toutes les informations 
+      ont été vérifiées, éditées et complétées par l'auteur.
