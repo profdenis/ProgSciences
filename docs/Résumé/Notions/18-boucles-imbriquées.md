@@ -188,6 +188,57 @@ en arrêtant le processus lorsqu'un nombre non positif est entré[1][2].
      - [9] https://www.docstring.fr/formations/faq/ligne-de-commande/comment-lire-lentree-de-lutilisateur-en-python/
    
 
+## Exemple : deviner un nombre
+
+```python
+import random
+
+def lire_entier(invite="Entrez un nombre entier : "):
+    entree_valide = False
+    while not entree_valide:
+        try:
+            nombre = int(input(invite))
+            entree_valide = True
+        except ValueError:
+            print("Erreur : Veuillez entrer un nombre entier valide.")
+    return nombre
+
+
+def lire_entier_positif(invite="Entrez un nombre entier positif : "):
+    entree_valide = False
+    while not entree_valide:
+        try:
+            nombre = int(input(invite))
+            if nombre > 0:
+                entree_valide = True
+            else:
+                print("Ce nombre n'est pas plus grand que 0.")
+        except ValueError:
+            print("Erreur : Veuillez entrer un nombre entier valide.")
+    return nombre
+
+
+def main():
+    valeur_max = lire_entier_positif("Entrez la valeur maximale : ")
+    invite = f"Devinez un nombre entier entre 1 et {valeur_max} inclusivement : "
+    cible = random.randint(1, valeur_max)
+    # print(cible)  # ne pas oublier d'effacer cette ligne
+    essai = lire_entier(invite)
+    while cible != essai:
+        print("Incorrect ! Essayez de nouveau.")
+        if essai < cible:
+            print("Trop bas !")
+        else:
+            print("Trop haut!")
+        essai = lire_entier(invite)
+
+    print("Vous avez gagné !")
+
+main()
+```
+
+
+
 
 -------
 
